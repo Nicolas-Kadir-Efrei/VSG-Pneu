@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { saveQuote } from '@/lib/storage'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -31,8 +32,35 @@ export default function DevisPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Devis form submitted:', formData)
-    setIsSubmitted(true)
+    
+    // Sauvegarder le devis dans le localStorage
+    try {
+      const quote = saveQuote({
+        customerName: formData.nom,
+        phone: formData.telephone,
+        email: formData.email || undefined,
+        service: formData.service,
+        vehicle: formData.vehicule || undefined,
+        vehicleDetails: {
+          marque: formData.marque || undefined,
+          modele: formData.modele || undefined,
+          annee: formData.annee || undefined
+        },
+        numberOfTires: formData.nombrePneus || undefined,
+        tireDimensions: formData.dimensionsPneus || undefined,
+        preferredBrand: formData.marquePreferee || undefined,
+        maxBudget: formData.budgetMax || undefined,
+        hasOwnTires: formData.pneusAchetes || undefined,
+        urgency: (formData.urgence as 'flexible' | 'semaine' | 'rapide' | 'urgent') || 'flexible',
+        message: formData.message || undefined
+      })
+      
+      console.log('Devis sauvegardé:', quote)
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error('Erreur lors de la sauvegarde:', error)
+      alert('Erreur lors de l\'envoi de votre demande. Veuillez réessayer.')
+    }
   }
 
   const handleChange = (field: string, value: string) => {

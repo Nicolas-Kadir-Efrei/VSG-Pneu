@@ -223,7 +223,7 @@ export default function ServicesPage() {
             <Button size="lg" asChild>
               <Link href="/devis">Demander un devis</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white" asChild>
               <Link href="/rendez-vous">Prendre rendez-vous</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>

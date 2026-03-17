@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Metadata } from 'next'
+import { saveAppointment } from '@/lib/storage'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -26,9 +26,34 @@ export default function RendezVousPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData)
-    setIsSubmitted(true)
+    
+    // Sauvegarder le rendez-vous dans le localStorage
+    try {
+      console.log('Données du formulaire avant sauvegarde:', formData)
+      
+      const appointment = saveAppointment({
+        customerName: formData.nom,
+        phone: formData.telephone,
+        email: formData.email || undefined,
+        service: formData.service,
+        vehicle: formData.vehicule || undefined,
+        date: formData.date,
+        time: formData.heure,
+        urgency: (formData.urgence as 'normale' | 'rapide' | 'urgente') || 'normale',
+        message: formData.message || undefined
+      })
+      
+      console.log('Rendez-vous sauvegardé:', appointment)
+      
+      // Vérifier que les données sont bien dans le localStorage
+      const allAppointments = JSON.parse(localStorage.getItem('vsg_appointments') || '[]')
+      console.log('Tous les RDV dans localStorage:', allAppointments)
+      
+      setIsSubmitted(true)
+    } catch (error) {
+      console.error('Erreur lors de la sauvegarde:', error)
+      alert('Erreur lors de l\'envoi de votre demande. Veuillez réessayer.')
+    }
   }
 
   const handleChange = (field: string, value: string) => {
