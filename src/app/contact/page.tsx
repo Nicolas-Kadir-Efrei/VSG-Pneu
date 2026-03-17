@@ -1,0 +1,340 @@
+import { Metadata } from 'next'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Phone, MapPin, Clock, Mail, Navigation } from 'lucide-react'
+import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Contact - VSG PNEUS | Adresse, Téléphone, Horaires',
+  description: 'Contactez VSG PNEUS : 01 43 89 68 08, 192 Rue de Paris, 94190 Villeneuve-Saint-Georges. Horaires, itinéraire et informations pratiques.',
+}
+
+export default function ContactPage() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+              Nous Contacter
+            </h1>
+            <p className="text-xl text-orange-100 mb-8">
+              Toutes les informations pour nous joindre et nous rendre visite
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Information */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Contact Details */}
+            <div className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3 text-2xl">
+                    <Phone className="h-6 w-6 text-orange-500" />
+                    Téléphone
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <a 
+                        href="tel:0143896808" 
+                        className="text-3xl font-bold text-orange-500 hover:text-orange-600 transition-colors"
+                      >
+                        01 43 89 68 08
+                      </a>
+                      <p className="text-gray-600 mt-2">
+                        Appelez-nous pour toute urgence, prise de rendez-vous ou demande d'information
+                      </p>
+                    </div>
+                    <div className="flex gap-3">
+                      <Button size="lg" asChild>
+                        <a href="tel:0143896808">
+                          <Phone className="h-5 w-5 mr-2" />
+                          Appeler maintenant
+                        </a>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <Link href="/rendez-vous">Prendre RDV</Link>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3 text-2xl">
+                    <MapPin className="h-6 w-6 text-orange-500" />
+                    Adresse
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-xl font-semibold text-gray-900">VSG PNEUS</p>
+                      <p className="text-lg text-gray-700">192 Rue de Paris</p>
+                      <p className="text-lg text-gray-700">94190 Villeneuve-Saint-Georges</p>
+                    </div>
+                    <div className="flex gap-3">
+                      <Button size="lg" asChild>
+                        <a 
+                          href="https://maps.google.com/?q=192+Rue+de+Paris,+94190+Villeneuve-Saint-Georges" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <Navigation className="h-5 w-5 mr-2" />
+                          Itinéraire GPS
+                        </a>
+                      </Button>
+                      <Button size="lg" variant="outline" asChild>
+                        <a 
+                          href="https://waze.com/ul?q=192+Rue+de+Paris+Villeneuve-Saint-Georges" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          Waze
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Map Placeholder */}
+            <div>
+              <Card className="h-full">
+                <CardHeader>
+                  <CardTitle>Localisation</CardTitle>
+                  <CardDescription>
+                    Nous sommes situés sur la Rue de Paris, facilement accessible
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="bg-gray-200 rounded-lg h-80 flex items-center justify-center">
+                    <div className="text-center text-gray-500">
+                      <MapPin className="h-16 w-16 mx-auto mb-4" />
+                      <p className="text-lg font-medium">Carte interactive</p>
+                      <p>192 Rue de Paris</p>
+                      <p>94190 Villeneuve-Saint-Georges</p>
+                      <Button className="mt-4" asChild>
+                        <a 
+                          href="https://maps.google.com/?q=192+Rue+de+Paris,+94190+Villeneuve-Saint-Georges" 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          Voir sur Google Maps
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Hours and Additional Info */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Clock className="h-6 w-6 text-orange-500" />
+                  Horaires d'ouverture
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Lundi</span>
+                    <span>8h00 - 18h00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Mardi</span>
+                    <span>8h00 - 18h00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Mercredi</span>
+                    <span>8h00 - 18h00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Jeudi</span>
+                    <span>8h00 - 18h00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Vendredi</span>
+                    <span>8h00 - 18h00</span>
+                  </div>
+                  <div className="flex justify-between items-center border-t pt-2">
+                    <span className="font-medium">Samedi</span>
+                    <span>8h00 - 12h00</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">Dimanche</span>
+                    <span className="text-red-500">Fermé</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Informations pratiques</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <span className="font-medium">Moyens de paiement :</span>
+                    <p className="text-gray-600">CB, Espèces, Chèques</p>
+                  </div>
+                  <div>
+                    <span className="font-medium">Stationnement :</span>
+                    <p className="text-gray-600">Places disponibles devant le garage</p>
+                  </div>
+                  <div>
+                    <span className="font-medium">Accès :</span>
+                    <p className="text-gray-600">Proche RER D, bus 393</p>
+                  </div>
+                  <div>
+                    <span className="font-medium">Services :</span>
+                    <p className="text-gray-600">Montage, réparation, équilibrage</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Informations légales</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2 text-sm">
+                  <div>
+                    <span className="font-medium">Raison sociale :</span>
+                    <p className="text-gray-600">KAER VSG PNEUS</p>
+                  </div>
+                  <div>
+                    <span className="font-medium">SIREN :</span>
+                    <p className="text-gray-600">810 919 258</p>
+                  </div>
+                  <div>
+                    <span className="font-medium">Code APE :</span>
+                    <p className="text-gray-600">45.20A</p>
+                  </div>
+                  <div>
+                    <span className="font-medium">Capital social :</span>
+                    <p className="text-gray-600">2 000 EUR</p>
+                  </div>
+                  <div>
+                    <span className="font-medium">RCS :</span>
+                    <p className="text-gray-600">Créteil</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Actions */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Actions rapides
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Choisissez l'action qui correspond le mieux à votre besoin
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="text-4xl mb-2">🚨</div>
+                <CardTitle className="text-lg">Urgence</CardTitle>
+                <CardDescription>Crevaison, pneu dangereux</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full bg-red-500 hover:bg-red-600" asChild>
+                  <a href="tel:0143896808">Appeler maintenant</a>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="text-4xl mb-2">📅</div>
+                <CardTitle className="text-lg">Rendez-vous</CardTitle>
+                <CardDescription>Planifier une intervention</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" asChild>
+                  <Link href="/rendez-vous">Réserver</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="text-4xl mb-2">💰</div>
+                <CardTitle className="text-lg">Devis</CardTitle>
+                <CardDescription>Estimation gratuite</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline" asChild>
+                  <Link href="/devis">Demander</Link>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="text-4xl mb-2">🗺️</div>
+                <CardTitle className="text-lg">Itinéraire</CardTitle>
+                <CardDescription>Venir au garage</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full" variant="outline" asChild>
+                  <a 
+                    href="https://maps.google.com/?q=192+Rue+de+Paris,+94190+Villeneuve-Saint-Georges" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    GPS
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Emergency Notice */}
+      <section className="py-12 bg-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-2xl font-bold text-orange-800 mb-4">
+              🚨 Service d'urgence disponible
+            </h2>
+            <p className="text-orange-700 text-lg mb-6">
+              En cas de crevaison ou de problème urgent avec vos pneus, n'hésitez pas à nous appeler. 
+              Nous faisons notre possible pour vous recevoir dans la journée selon nos disponibilités.
+            </p>
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600" asChild>
+              <a href="tel:0143896808">
+                <Phone className="h-5 w-5 mr-2" />
+                01 43 89 68 08
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

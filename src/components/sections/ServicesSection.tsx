@@ -1,0 +1,118 @@
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Wrench, RotateCcw, Scale, Zap } from 'lucide-react'
+
+export default function ServicesSection() {
+  const services = [
+    {
+      icon: Wrench,
+      title: "Montage de pneus",
+      description: "Montage professionnel de tous types de pneus avec équilibrage inclus",
+      price: "À partir de 15€",
+      features: ["Démontage/remontage", "Équilibrage", "Contrôle pression", "Valve neuve"]
+    },
+    {
+      icon: Zap,
+      title: "Réparation crevaison",
+      description: "Réparation rapide et durable de vos crevaisons",
+      price: "À partir de 20€",
+      features: ["Diagnostic gratuit", "Réparation champignon", "Test étanchéité", "Garantie 6 mois"]
+    },
+    {
+      icon: Scale,
+      title: "Équilibrage",
+      description: "Équilibrage précis pour un confort de conduite optimal",
+      price: "À partir de 10€",
+      features: ["Machine dernière génération", "Poids de qualité", "Contrôle géométrie", "Test routier"]
+    },
+    {
+      icon: RotateCcw,
+      title: "Permutation",
+      description: "Permutation des pneus pour optimiser leur durée de vie",
+      price: "À partir de 25€",
+      features: ["Contrôle usure", "Rotation optimale", "Vérification pression", "Conseils d'entretien"]
+    }
+  ]
+
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            Nos Services
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Des prestations complètes pour l'entretien et la réparation de vos pneus
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {services.map((service, index) => {
+            const Icon = service.icon
+            return (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="bg-orange-100 p-2 rounded-lg">
+                      <Icon className="h-6 w-6 text-orange-500" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <div className="text-lg font-semibold text-orange-500">
+                        {service.price}
+                      </div>
+                    </div>
+                  </div>
+                  <CardDescription className="text-base">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-600">
+                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )
+          })}
+        </div>
+
+        {/* Special Services */}
+        <div className="bg-white rounded-xl p-8 shadow-sm">
+          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Services spécialisés
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="text-4xl mb-3">🏃‍♂️</div>
+              <h4 className="font-semibold text-gray-900 mb-2">Service Express</h4>
+              <p className="text-gray-600 text-sm">Intervention rapide pour les urgences</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-3">🚐</div>
+              <h4 className="font-semibold text-gray-900 mb-2">Véhicules utilitaires</h4>
+              <p className="text-gray-600 text-sm">Pneus pour camionnettes et utilitaires</p>
+            </div>
+            <div className="text-center">
+              <div className="text-4xl mb-3">🔧</div>
+              <h4 className="font-semibold text-gray-900 mb-2">J'ai déjà mes pneus</h4>
+              <p className="text-gray-600 text-sm">Montage de vos pneus achetés ailleurs</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center mt-8">
+          <Button size="lg" asChild>
+            <Link href="/services">Voir tous nos services</Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  )
+}
