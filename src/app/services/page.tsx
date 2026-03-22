@@ -115,7 +115,12 @@ export default function ServicesPage() {
               <Button size="lg" variant="secondary" asChild>
                 <a href="tel:0143896808">Appeler pour urgence</a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-500" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent text-white border-white hover:bg-white hover:text-red-500"
+                asChild
+              >
                 <Link href="/rendez-vous">Prendre rendez-vous</Link>
               </Button>
             </div>

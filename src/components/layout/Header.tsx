@@ -70,7 +70,11 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
             <ThemeToggle />
-            <Button variant="outline" className="text-white border-white hover:bg-white hover:text-[#313334]" asChild>
+            <Button
+              variant="outline"
+              className="bg-transparent text-white border-white hover:bg-white hover:text-[#313334]"
+              asChild
+            >
               <Link href="/rendez-vous">Prendre RDV</Link>
             </Button>
             <Button asChild>
@@ -108,7 +112,11 @@ export default function Header() {
               </Link>
               <div className="flex flex-col gap-3 pt-4">
                 <ThemeToggle />
-                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-[#313334]" asChild>
+                <Button
+                  variant="outline"
+                  className="bg-transparent text-white border-white hover:bg-white hover:text-[#313334]"
+                  asChild
+                >
                   <Link href="/rendez-vous">Prendre RDV</Link>
                 </Button>
                 <Button asChild>
