@@ -2,16 +2,18 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Phone, MapPin, Menu, X } from 'lucide-react'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className="bg-[#313334] shadow-sm border-b border-zinc-700">
       {/* Top bar with contact info */}
-      <div className="bg-orange-500 text-white py-2">
+      <div className="bg-red-500 text-white py-2">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
@@ -35,32 +37,40 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-gray-900">
-            VSG PNEUS
+          <Link href="/" className="flex items-center" aria-label="Accueil VSG PNEUS">
+            <Image
+              src="/logo.png"
+              alt="Logo VSG PNEUS"
+              width={300}
+              height={100}
+              className="h-40 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-orange-500 transition-colors">
+            <Link href="/" className="text-white hover:text-red-400 transition-colors">
               Accueil
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-orange-500 transition-colors">
+            <Link href="/services" className="text-white hover:text-red-400 transition-colors">
               Services
             </Link>
-            <Link href="/tarifs" className="text-gray-700 hover:text-orange-500 transition-colors">
+            <Link href="/tarifs" className="text-white hover:text-red-400 transition-colors">
               Tarifs
             </Link>
-            <Link href="/avis" className="text-gray-700 hover:text-orange-500 transition-colors">
+            <Link href="/avis" className="text-white hover:text-red-400 transition-colors">
               Avis
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">
+            <Link href="/contact" className="text-white hover:text-red-400 transition-colors">
               Contact
             </Link>
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline" asChild>
+            <ThemeToggle />
+            <Button variant="outline" className="text-white border-white hover:bg-white hover:text-[#313334]" asChild>
               <Link href="/rendez-vous">Prendre RDV</Link>
             </Button>
             <Button asChild>
@@ -70,7 +80,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -79,25 +89,26 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t">
+          <div className="md:hidden py-4 border-t border-zinc-700">
             <nav className="flex flex-col space-y-4">
-              <Link href="/" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link href="/" className="text-white hover:text-red-400 transition-colors">
                 Accueil
               </Link>
-              <Link href="/services" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link href="/services" className="text-white hover:text-red-400 transition-colors">
                 Services
               </Link>
-              <Link href="/tarifs" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link href="/tarifs" className="text-white hover:text-red-400 transition-colors">
                 Tarifs
               </Link>
-              <Link href="/avis" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link href="/avis" className="text-white hover:text-red-400 transition-colors">
                 Avis
               </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-orange-500 transition-colors">
+              <Link href="/contact" className="text-white hover:text-red-400 transition-colors">
                 Contact
               </Link>
               <div className="flex flex-col gap-3 pt-4">
-                <Button variant="outline" asChild>
+                <ThemeToggle />
+                <Button variant="outline" className="text-white border-white hover:bg-white hover:text-[#313334]" asChild>
                   <Link href="/rendez-vous">Prendre RDV</Link>
                 </Button>
                 <Button asChild>

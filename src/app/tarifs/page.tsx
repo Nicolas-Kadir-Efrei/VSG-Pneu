@@ -63,20 +63,20 @@ export default function TarifsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 text-foreground dark:bg-black dark:text-zinc-100 dark:[&_[data-slot=card]]:bg-zinc-900 dark:[&_[data-slot=card]]:text-zinc-100 dark:[&_[data-slot=card]]:ring-zinc-700/60">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-16">
+      <section className="bg-gradient-to-br from-red-500 to-red-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Tarifs Transparents
             </h1>
-            <p className="text-xl text-orange-100 mb-8">
+            <p className="text-xl text-red-100 mb-8">
               Prix TTC affichés clairement, sans surprise. Devis gratuit sur demande pour toute prestation.
             </p>
-            <div className="bg-white/20 rounded-lg p-4 inline-block">
+            <div className="bg-white/20 rounded-lg p-4 inline-block dark:bg-black/30 dark:border dark:border-zinc-700">
               <p className="text-lg font-semibold">📞 01 43 89 68 08</p>
-              <p className="text-orange-100">Devis gratuit par téléphone</p>
+              <p className="text-red-100">Devis gratuit par téléphone</p>
             </div>
           </div>
         </div>
@@ -88,21 +88,21 @@ export default function TarifsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             {pricingData.map((category, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="text-center bg-gray-50">
-                  <CardTitle className="text-2xl text-gray-900">{category.category}</CardTitle>
+                <CardHeader className="text-center bg-gray-50 dark:bg-zinc-950">
+                  <CardTitle className="text-2xl text-gray-900 dark:text-zinc-100">{category.category}</CardTitle>
                   <CardDescription className="text-base">{category.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     {category.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="border-b border-gray-100 pb-3 last:border-b-0">
+                      <div key={serviceIndex} className="border-b border-gray-100 dark:border-zinc-700 pb-3 last:border-b-0">
                         <div className="flex justify-between items-start mb-1">
-                          <span className="font-medium text-gray-900">{service.name}</span>
-                          <span className="font-bold text-orange-500 text-lg">
+                          <span className="font-medium text-gray-900 dark:text-zinc-100">{service.name}</span>
+                          <span className="font-bold text-red-500 text-lg">
                             {service.price.includes('+') ? service.price : `À partir de ${service.price}`}
                           </span>
                         </div>
-                        <p className="text-sm text-gray-600">{service.details}</p>
+                        <p className="text-sm text-gray-600 dark:text-zinc-400">{service.details}</p>
                       </div>
                     ))}
                   </div>
@@ -114,22 +114,22 @@ export default function TarifsPage() {
       </section>
 
       {/* Supplements and Included Services */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-zinc-950">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Supplements */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-6">
                 Suppléments éventuels
               </h2>
               <div className="space-y-4">
                 {supplements.map((supplement, index) => (
-                  <div key={index} className="flex justify-between items-start p-4 bg-gray-50 rounded-lg">
+                  <div key={index} className="flex justify-between items-start p-4 bg-gray-50 dark:bg-zinc-900 rounded-lg">
                     <div>
-                      <h3 className="font-medium text-gray-900">{supplement.name}</h3>
-                      <p className="text-sm text-gray-600">{supplement.description}</p>
+                      <h3 className="font-medium text-gray-900 dark:text-zinc-100">{supplement.name}</h3>
+                      <p className="text-sm text-gray-600 dark:text-zinc-400">{supplement.description}</p>
                     </div>
-                    <span className="font-semibold text-orange-500 ml-4">{supplement.price}</span>
+                    <span className="font-semibold text-red-500 ml-4">{supplement.price}</span>
                   </div>
                 ))}
               </div>
@@ -148,14 +148,14 @@ export default function TarifsPage() {
 
             {/* Included Services */}
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-6">
                 Inclus dans nos prestations
               </h2>
               <div className="space-y-3">
                 {includedServices.map((service, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{service}</span>
+                    <span className="text-gray-700 dark:text-zinc-300">{service}</span>
                   </div>
                 ))}
               </div>
@@ -175,25 +175,25 @@ export default function TarifsPage() {
       </section>
 
       {/* Special Offers */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
               Offres spéciales
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="border-orange-200 bg-orange-50">
+            <Card className="border-red-200 bg-red-50">
               <CardHeader>
-                <CardTitle className="text-xl text-orange-800">🚨 Service Urgence</CardTitle>
+                <CardTitle className="text-xl text-red-800">🚨 Service Urgence</CardTitle>
                 <CardDescription>Pour les situations d'urgence</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 dark:text-zinc-300 mb-4">
                   En cas de crevaison ou problème urgent, nous faisons notre possible pour vous recevoir dans la journée.
                 </p>
-                <p className="text-sm text-orange-700 font-medium">
+                <p className="text-sm text-red-700 font-medium">
                   Même tarif - Pas de supplément urgence
                 </p>
               </CardContent>
@@ -205,7 +205,7 @@ export default function TarifsPage() {
                 <CardDescription>Montage de vos pneus achetés ailleurs</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-700 dark:text-zinc-300 mb-4">
                   Vous avez acheté vos pneus en ligne ou ailleurs ? Nous les montons au même tarif avec la même qualité.
                 </p>
                 <p className="text-sm text-blue-700 font-medium">
@@ -218,12 +218,12 @@ export default function TarifsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-zinc-950">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-zinc-100 mb-4">
             Besoin d'un devis personnalisé ?
           </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto">
             Contactez-nous pour obtenir un devis gratuit et personnalisé selon vos besoins
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -237,7 +237,7 @@ export default function TarifsPage() {
               <Link href="/rendez-vous">Prendre rendez-vous</Link>
             </Button>
           </div>
-          <p className="text-sm text-gray-500 mt-6">
+          <p className="text-sm text-gray-500 dark:text-zinc-500 mt-6">
             * Tarifs TTC valables pour véhicules standards. Devis personnalisé gratuit pour cas particuliers.
           </p>
         </div>

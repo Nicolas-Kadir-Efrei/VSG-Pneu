@@ -36,13 +36,13 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
             Nos Services
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Des prestations complètes pour l'entretien et la réparation de vos pneus
           </p>
         </div>
@@ -54,12 +54,12 @@ export default function ServicesSection() {
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="bg-orange-100 p-2 rounded-lg">
-                      <Icon className="h-6 w-6 text-orange-500" />
+                    <div className="bg-red-500/10 dark:bg-red-500/20 p-2 rounded-lg">
+                      <Icon className="h-6 w-6 text-red-500" />
                     </div>
                     <div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
-                      <div className="text-lg font-semibold text-orange-500">
+                      <div className="text-lg font-semibold text-red-500">
                         {service.price}
                       </div>
                     </div>
@@ -71,8 +71,8 @@ export default function ServicesSection() {
                 <CardContent>
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-orange-500 rounded-full"></div>
+                      <li key={featureIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <div className="w-1.5 h-1.5 bg-red-500 rounded-full"></div>
                         {feature}
                       </li>
                     ))}
@@ -84,25 +84,25 @@ export default function ServicesSection() {
         </div>
 
         {/* Special Services */}
-        <div className="bg-white rounded-xl p-8 shadow-sm">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <div className="bg-card rounded-xl p-8 shadow-sm">
+          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
             Services spécialisés
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-4xl mb-3">🏃‍♂️</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Service Express</h4>
-              <p className="text-gray-600 text-sm">Intervention rapide pour les urgences</p>
+              <h4 className="font-semibold text-foreground mb-2">Service Express</h4>
+              <p className="text-muted-foreground text-sm">Intervention rapide pour les urgences</p>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-3">🚐</div>
-              <h4 className="font-semibold text-gray-900 mb-2">Véhicules utilitaires</h4>
-              <p className="text-gray-600 text-sm">Pneus pour camionnettes et utilitaires</p>
+              <h4 className="font-semibold text-foreground mb-2">Véhicules utilitaires</h4>
+              <p className="text-muted-foreground text-sm">Pneus pour camionnettes et utilitaires</p>
             </div>
             <div className="text-center">
               <div className="text-4xl mb-3">🔧</div>
-              <h4 className="font-semibold text-gray-900 mb-2">J'ai déjà mes pneus</h4>
-              <p className="text-gray-600 text-sm">Montage de vos pneus achetés ailleurs</p>
+              <h4 className="font-semibold text-foreground mb-2">J'ai déjà mes pneus</h4>
+              <p className="text-muted-foreground text-sm">Montage de vos pneus achetés ailleurs</p>
             </div>
           </div>
         </div>

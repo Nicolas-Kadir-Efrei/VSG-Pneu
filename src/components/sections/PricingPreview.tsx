@@ -38,13 +38,13 @@ export default function PricingPreview() {
   ]
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
             Tarifs transparents
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Prix TTC affichés clairement, sans surprise. Devis gratuit sur demande.
           </p>
         </div>
@@ -60,8 +60,8 @@ export default function PricingPreview() {
                 <div className="space-y-3">
                   {category.services.map((service, serviceIndex) => (
                     <div key={serviceIndex} className="flex justify-between items-center">
-                      <span className="text-gray-700">{service.name}</span>
-                      <span className="font-semibold text-orange-500">
+                      <span className="text-muted-foreground">{service.name}</span>
+                      <span className="font-semibold text-red-500">
                         À partir de {service.price}
                       </span>
                     </div>
@@ -73,10 +73,10 @@ export default function PricingPreview() {
         </div>
 
         {/* Additional Info */}
-        <div className="bg-gray-50 rounded-xl p-8">
+        <div className="bg-muted rounded-xl p-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-foreground mb-4">
                 Inclus dans nos prestations
               </h3>
               <div className="space-y-2">
@@ -88,16 +88,16 @@ export default function PricingPreview() {
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-2">
                     <Check className="h-5 w-5 text-green-500" />
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-muted-foreground">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-xl font-bold text-foreground mb-4">
                 Suppléments éventuels
               </h3>
-              <div className="space-y-2 text-gray-700">
+              <div className="space-y-2 text-muted-foreground">
                 <p>• Valve TPMS : +15€</p>
                 <p>• Pneus Run-flat : +5€</p>
                 <p>• Jantes alliage : +3€</p>

@@ -30,7 +30,7 @@ export default function DevisPage() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     // Sauvegarder le devis dans le localStorage
@@ -56,6 +56,31 @@ export default function DevisPage() {
       })
       
       console.log('Devis sauvegardé:', quote)
+
+      const mailResponse = await fetch('/api/form-notification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'devis',
+          data: formData,
+        }),
+      })
+
+      if (!mailResponse.ok) {
+        const payload = await mailResponse.json().catch(() => ({})) as {
+          error?: string
+          details?: string
+          hint?: string
+        }
+        console.error('Envoi mail:', payload)
+        const msg =
+          payload.details ||
+          payload.hint ||
+          payload.error ||
+          "Erreur lors de l'envoi du mail"
+        throw new Error(msg)
+      }
+
       setIsSubmitted(true)
     } catch (error) {
       console.error('Erreur lors de la sauvegarde:', error)
@@ -69,7 +94,7 @@ export default function DevisPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gray-50 py-16">
+      <div className="min-h-screen bg-black py-16 text-zinc-100">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Card className="border-green-200 bg-green-50">
@@ -83,10 +108,10 @@ export default function DevisPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-gray-700 mb-6">
+                <p className="text-zinc-300 mb-6">
                   Nous vous rappellerons rapidement avec un devis personnalisé et détaillé.
                 </p>
-                <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-2 text-sm text-zinc-400">
                   <p>📞 Contact direct : <strong>01 43 89 68 08</strong></p>
                   <p>⏰ Délai de réponse : sous 4h en journée</p>
                   <p>📧 Devis détaillé par email si renseigné</p>
@@ -103,18 +128,18 @@ export default function DevisPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black text-zinc-100 [&_[data-slot=card]]:bg-zinc-900 [&_[data-slot=card]]:text-zinc-100 [&_[data-slot=card]]:ring-zinc-700/60 [&_[data-slot=input]]:border-zinc-700 [&_[data-slot=input]]:bg-zinc-950 [&_[data-slot=input]]:text-zinc-100 [&_[data-slot=textarea]]:border-zinc-700 [&_[data-slot=textarea]]:bg-zinc-950 [&_[data-slot=textarea]]:text-zinc-100 [&_[data-slot=select-trigger]]:border-zinc-700 [&_[data-slot=select-trigger]]:bg-zinc-950 [&_[data-slot=select-trigger]]:text-zinc-100">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-16">
+      <section className="bg-gradient-to-br from-red-500 to-red-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Demander un Devis
             </h1>
-            <p className="text-xl text-orange-100 mb-8">
+            <p className="text-xl text-red-100 mb-8">
               Obtenez un devis gratuit et personnalisé pour vos besoins en pneus et services
             </p>
-            <div className="flex items-center justify-center gap-6 text-orange-100">
+            <div className="flex items-center justify-center gap-6 text-red-100">
               <div className="flex items-center gap-2">
                 <Calculator className="h-5 w-5" />
                 <span>Devis gratuit</span>
@@ -129,7 +154,7 @@ export default function DevisPage() {
       </section>
 
       {/* Form Section */}
-      <section className="py-16">
+      <section className="py-16 bg-zinc-950">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Form */}
@@ -145,7 +170,7 @@ export default function DevisPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     {/* Contact Info */}
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-gray-900">Vos coordonnées</h3>
+                      <h3 className="text-lg font-semibold text-zinc-100">Vos coordonnées</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="nom">Nom complet *</Label>
@@ -178,13 +203,13 @@ export default function DevisPage() {
                           onChange={(e) => handleChange('email', e.target.value)}
                           placeholder="votre@email.com"
                         />
-                        <p className="text-sm text-gray-500 mt-1">Pour recevoir le devis détaillé par email</p>
+                        <p className="text-sm text-zinc-500 mt-1">Pour recevoir le devis détaillé par email</p>
                       </div>
                     </div>
 
                     {/* Vehicle Info */}
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-gray-900">Votre véhicule</h3>
+                      <h3 className="text-lg font-semibold text-zinc-100">Votre véhicule</h3>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
                           <Label htmlFor="marque">Marque</Label>
@@ -227,7 +252,7 @@ export default function DevisPage() {
 
                     {/* Service Details */}
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-gray-900">Votre besoin</h3>
+                      <h3 className="text-lg font-semibold text-zinc-100">Votre besoin</h3>
                       <div>
                         <Label htmlFor="service">Service souhaité *</Label>
                         <Select onValueChange={(value) => handleChange('service', value)}>
@@ -304,7 +329,7 @@ export default function DevisPage() {
 
                     {/* Preferences */}
                     <div className="space-y-4">
-                      <h3 className="text-lg font-semibold text-gray-900">Préférences (optionnel)</h3>
+                      <h3 className="text-lg font-semibold text-zinc-100">Préférences (optionnel)</h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                           <Label htmlFor="marquePreferee">Marque de pneu préférée</Label>
@@ -342,7 +367,7 @@ export default function DevisPage() {
                       Demander le devis gratuit
                     </Button>
 
-                    <p className="text-sm text-gray-500 text-center">
+                    <p className="text-sm text-zinc-500 text-center">
                       * Champs obligatoires. Devis gratuit et sans engagement.
                     </p>
                   </form>
@@ -355,7 +380,7 @@ export default function DevisPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Calculator className="h-5 w-5 text-orange-500" />
+                    <Calculator className="h-5 w-5 text-red-500" />
                     Devis gratuit
                   </CardTitle>
                 </CardHeader>
@@ -372,7 +397,7 @@ export default function DevisPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Phone className="h-5 w-5 text-orange-500" />
+                    <Phone className="h-5 w-5 text-red-500" />
                     Contact direct
                   </CardTitle>
                 </CardHeader>
@@ -383,7 +408,7 @@ export default function DevisPage() {
                       01 43 89 68 08
                     </a>
                   </Button>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-zinc-400">
                     Devis par téléphone possible pour les demandes simples
                   </p>
                 </CardContent>
@@ -406,12 +431,12 @@ export default function DevisPage() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-orange-50 border-orange-200">
+              <Card className="bg-red-50 border-red-200">
                 <CardHeader>
-                  <CardTitle className="text-orange-800">🚨 Urgence ?</CardTitle>
+                  <CardTitle className="text-red-800">🚨 Urgence ?</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-orange-700">
+                  <p className="text-sm text-red-700">
                     Pour les urgences, appelez directement. Nous faisons notre possible pour intervenir dans la journée.
                   </p>
                 </CardContent>

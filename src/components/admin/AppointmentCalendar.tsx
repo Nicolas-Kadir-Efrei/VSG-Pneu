@@ -66,7 +66,7 @@ export default function AppointmentCalendar({ appointments }: AppointmentCalenda
   const getStatusBadge = (status: Appointment['status']) => {
     switch (status) {
       case 'pending':
-        return <Badge variant="outline" className="text-orange-600 border-orange-600">En attente</Badge>
+        return <Badge variant="outline" className="text-red-600 border-red-600">En attente</Badge>
       case 'confirmed':
         return <Badge variant="outline" className="text-blue-600 border-blue-600">Confirmé</Badge>
       case 'completed':
@@ -83,7 +83,7 @@ export default function AppointmentCalendar({ appointments }: AppointmentCalenda
       case 'urgente':
         return 'bg-red-100 border-red-300'
       case 'rapide':
-        return 'bg-orange-100 border-orange-300'
+        return 'bg-red-100 border-red-300'
       case 'normale':
         return 'bg-blue-100 border-blue-300'
       default:
@@ -239,7 +239,7 @@ export default function AppointmentCalendar({ appointments }: AppointmentCalenda
                       </div>
 
                       {appointment.message && (
-                        <div className="text-xs bg-white/50 p-2 rounded border">
+                        <div className="text-xs bg-muted/50 p-2 rounded border">
                           <strong>Note:</strong> {appointment.message}
                         </div>
                       )}

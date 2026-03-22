@@ -77,15 +77,15 @@ export default function AvisPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-16">
+      <section className="bg-gradient-to-br from-red-500 to-red-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Avis de nos Clients
             </h1>
-            <p className="text-xl text-orange-100 mb-8">
+            <p className="text-xl text-red-100 mb-8">
               Découvrez ce que pensent nos clients de nos services
             </p>
             <div className="bg-white/20 rounded-lg p-6 inline-block">
@@ -93,14 +93,14 @@ export default function AvisPage() {
                 {renderStars(5)}
               </div>
               <div className="text-3xl font-bold">{stats.averageRating}/10</div>
-              <div className="text-orange-100">Basé sur {stats.totalReviews} avis</div>
+              <div className="text-red-100">Basé sur {stats.totalReviews} avis</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Statistics */}
-      <section className="py-16">
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card className="mb-12">
@@ -124,13 +124,13 @@ export default function AvisPage() {
                         <span className="text-sm font-medium">{item.stars}</span>
                         <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                       </div>
-                      <div className="flex-1 bg-gray-200 rounded-full h-2">
+                      <div className="flex-1 bg-muted rounded-full h-2">
                         <div
-                          className="bg-orange-500 h-2 rounded-full"
+                          className="bg-red-500 h-2 rounded-full"
                           style={{ width: `${item.percentage}%` }}
                         />
                       </div>
-                      <span className="text-sm text-gray-600 w-12">{item.count}</span>
+                      <span className="text-sm text-muted-foreground w-12">{item.count}</span>
                     </div>
                   ))}
                 </div>
@@ -155,12 +155,12 @@ export default function AvisPage() {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2">
-                        <Quote className="h-4 w-4 text-gray-400" />
-                        <span className="text-sm text-gray-600 font-medium">
+                        <Quote className="h-4 w-4 text-muted-foreground" />
+                        <span className="text-sm text-muted-foreground font-medium">
                           {review.service}
                         </span>
                       </div>
-                      <p className="text-gray-700 italic">"{review.comment}"</p>
+                      <p className="text-foreground italic">"{review.comment}"</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -169,14 +169,14 @@ export default function AvisPage() {
 
             {/* External Reviews */}
             <div className="text-center">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
                 Voir tous nos avis
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-blue-500/10 dark:bg-blue-500/20 rounded-lg flex items-center justify-center">
                         🛞
                       </div>
                       Allopneus
@@ -191,7 +191,7 @@ export default function AvisPage() {
                         {renderStars(5)}
                         <span className="font-semibold">9,4/10</span>
                       </div>
-                      <p className="text-gray-600">48 avis vérifiés</p>
+                      <p className="text-muted-foreground">48 avis vérifiés</p>
                       <Button className="w-full" variant="outline" asChild>
                         <a 
                           href="https://www.allopneus.com/montage-pneu/val-de-marne-94/villeneuve-saint-georges/vsg-pneus-9797" 
@@ -209,7 +209,7 @@ export default function AvisPage() {
                 <Card className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                      <div className="w-12 h-12 bg-red-500/10 dark:bg-red-500/20 rounded-lg flex items-center justify-center">
                         📍
                       </div>
                       Google My Business
@@ -224,7 +224,7 @@ export default function AvisPage() {
                         {renderStars(5)}
                         <span className="font-semibold">4,8/5</span>
                       </div>
-                      <p className="text-gray-600">Avis Google</p>
+                      <p className="text-muted-foreground">Avis Google</p>
                       <Button className="w-full" variant="outline" asChild>
                         <a 
                           href="https://maps.google.com/?q=VSG+PNEUS+Villeneuve-Saint-Georges" 
@@ -245,13 +245,13 @@ export default function AvisPage() {
       </section>
 
       {/* Leave Review CTA */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Vous êtes client ?
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-muted-foreground mb-8">
               Votre avis nous aide à améliorer nos services et guide les futurs clients
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -267,21 +267,21 @@ export default function AvisPage() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div className="bg-white rounded-lg p-6">
-                <div className="text-3xl font-bold text-orange-500 mb-2">10+</div>
-                <div className="text-gray-600">Années d'expérience</div>
+              <div className="bg-card rounded-lg p-6">
+                <div className="text-3xl font-bold text-red-500 mb-2">10+</div>
+                <div className="text-muted-foreground">Années d'expérience</div>
               </div>
-              <div className="bg-white rounded-lg p-6">
-                <div className="text-3xl font-bold text-orange-500 mb-2">1000+</div>
-                <div className="text-gray-600">Clients satisfaits</div>
+              <div className="bg-card rounded-lg p-6">
+                <div className="text-3xl font-bold text-red-500 mb-2">1000+</div>
+                <div className="text-muted-foreground">Clients satisfaits</div>
               </div>
-              <div className="bg-white rounded-lg p-6">
-                <div className="text-3xl font-bold text-orange-500 mb-2">95%</div>
-                <div className="text-gray-600">Clients qui recommandent</div>
+              <div className="bg-card rounded-lg p-6">
+                <div className="text-3xl font-bold text-red-500 mb-2">95%</div>
+                <div className="text-muted-foreground">Clients qui recommandent</div>
               </div>
             </div>
           </div>

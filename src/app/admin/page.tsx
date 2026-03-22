@@ -118,7 +118,7 @@ export default function AdminDashboard() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-orange-500" />
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-red-500" />
           <p className="text-gray-600">Vérification de l'authentification...</p>
         </div>
       </div>
@@ -261,7 +261,7 @@ export default function AdminDashboard() {
                         )}
                         {stats.urgentRequests > 0 && (
                           <div className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
                             <span className="text-sm">{stats.urgentRequests} demande(s) urgente(s)</span>
                           </div>
                         )}

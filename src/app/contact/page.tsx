@@ -11,15 +11,15 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-16">
+      <section className="bg-gradient-to-br from-red-500 to-red-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Nous Contacter
             </h1>
-            <p className="text-xl text-orange-100 mb-8">
+            <p className="text-xl text-red-100 mb-8">
               Toutes les informations pour nous joindre et nous rendre visite
             </p>
           </div>
@@ -27,7 +27,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16">
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
             {/* Contact Details */}
@@ -35,7 +35,7 @@ export default function ContactPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-2xl">
-                    <Phone className="h-6 w-6 text-orange-500" />
+                    <Phone className="h-6 w-6 text-red-500" />
                     Téléphone
                   </CardTitle>
                 </CardHeader>
@@ -44,11 +44,11 @@ export default function ContactPage() {
                     <div>
                       <a 
                         href="tel:0143896808" 
-                        className="text-3xl font-bold text-orange-500 hover:text-orange-600 transition-colors"
+                        className="text-3xl font-bold text-red-500 hover:text-red-600 transition-colors"
                       >
                         01 43 89 68 08
                       </a>
-                      <p className="text-gray-600 mt-2">
+                      <p className="text-muted-foreground mt-2">
                         Appelez-nous pour toute urgence, prise de rendez-vous ou demande d'information
                       </p>
                     </div>
@@ -70,16 +70,16 @@ export default function ContactPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-2xl">
-                    <MapPin className="h-6 w-6 text-orange-500" />
+                    <MapPin className="h-6 w-6 text-red-500" />
                     Adresse
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <p className="text-xl font-semibold text-gray-900">VSG PNEUS</p>
-                      <p className="text-lg text-gray-700">192 Rue de Paris</p>
-                      <p className="text-lg text-gray-700">94190 Villeneuve-Saint-Georges</p>
+                      <p className="text-xl font-semibold text-foreground">VSG PNEUS</p>
+                      <p className="text-lg text-foreground">192 Rue de Paris</p>
+                      <p className="text-lg text-foreground">94190 Villeneuve-Saint-Georges</p>
                     </div>
                     <div className="flex gap-3">
                       <Button size="lg" asChild>
@@ -117,8 +117,8 @@ export default function ContactPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="bg-gray-200 rounded-lg h-80 flex items-center justify-center">
-                    <div className="text-center text-gray-500">
+                  <div className="bg-muted rounded-lg h-80 flex items-center justify-center">
+                    <div className="text-center text-muted-foreground">
                       <MapPin className="h-16 w-16 mx-auto mb-4" />
                       <p className="text-lg font-medium">Carte interactive</p>
                       <p>192 Rue de Paris</p>
@@ -144,7 +144,7 @@ export default function ContactPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <Clock className="h-6 w-6 text-orange-500" />
+                  <Clock className="h-6 w-6 text-red-500" />
                   Horaires d'ouverture
                 </CardTitle>
               </CardHeader>
@@ -190,19 +190,19 @@ export default function ContactPage() {
                 <div className="space-y-3 text-sm">
                   <div>
                     <span className="font-medium">Moyens de paiement :</span>
-                    <p className="text-gray-600">CB, Espèces, Chèques</p>
+                    <p className="text-muted-foreground">CB, Espèces, Chèques</p>
                   </div>
                   <div>
                     <span className="font-medium">Stationnement :</span>
-                    <p className="text-gray-600">Places disponibles devant le garage</p>
+                    <p className="text-muted-foreground">Places disponibles devant le garage</p>
                   </div>
                   <div>
                     <span className="font-medium">Accès :</span>
-                    <p className="text-gray-600">Proche RER D, bus 393</p>
+                    <p className="text-muted-foreground">Proche RER D, bus 393</p>
                   </div>
                   <div>
                     <span className="font-medium">Services :</span>
-                    <p className="text-gray-600">Montage, réparation, équilibrage</p>
+                    <p className="text-muted-foreground">Montage, réparation, équilibrage</p>
                   </div>
                 </div>
               </CardContent>
@@ -216,23 +216,23 @@ export default function ContactPage() {
                 <div className="space-y-2 text-sm">
                   <div>
                     <span className="font-medium">Raison sociale :</span>
-                    <p className="text-gray-600">KAER VSG PNEUS</p>
+                    <p className="text-muted-foreground">KAER VSG PNEUS</p>
                   </div>
                   <div>
                     <span className="font-medium">SIREN :</span>
-                    <p className="text-gray-600">810 919 258</p>
+                    <p className="text-muted-foreground">810 919 258</p>
                   </div>
                   <div>
                     <span className="font-medium">Code APE :</span>
-                    <p className="text-gray-600">45.20A</p>
+                    <p className="text-muted-foreground">45.20A</p>
                   </div>
                   <div>
                     <span className="font-medium">Capital social :</span>
-                    <p className="text-gray-600">2 000 EUR</p>
+                    <p className="text-muted-foreground">2 000 EUR</p>
                   </div>
                   <div>
                     <span className="font-medium">RCS :</span>
-                    <p className="text-gray-600">Créteil</p>
+                    <p className="text-muted-foreground">Créteil</p>
                   </div>
                 </div>
               </CardContent>
@@ -242,13 +242,13 @@ export default function ContactPage() {
       </section>
 
       {/* Quick Actions */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Actions rapides
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Choisissez l'action qui correspond le mieux à votre besoin
             </p>
           </div>
@@ -261,7 +261,7 @@ export default function ContactPage() {
                 <CardDescription>Crevaison, pneu dangereux</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-red-500 hover:bg-red-600" asChild>
+                <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-950" asChild>
                   <a href="tel:0143896808">Appeler maintenant</a>
                 </Button>
               </CardContent>
@@ -316,17 +316,17 @@ export default function ContactPage() {
       </section>
 
       {/* Emergency Notice */}
-      <section className="py-12 bg-orange-50">
+      <section className="py-12 bg-red-500/10 dark:bg-red-500/20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-orange-800 mb-4">
+            <h2 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-4">
               🚨 Service d'urgence disponible
             </h2>
-            <p className="text-orange-700 text-lg mb-6">
+            <p className="text-red-600 dark:text-red-300 text-lg mb-6">
               En cas de crevaison ou de problème urgent avec vos pneus, n'hésitez pas à nous appeler. 
               Nous faisons notre possible pour vous recevoir dans la journée selon nos disponibilités.
             </p>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600" asChild>
+            <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-yellow-950" asChild>
               <a href="tel:0143896808">
                 <Phone className="h-5 w-5 mr-2" />
                 01 43 89 68 08

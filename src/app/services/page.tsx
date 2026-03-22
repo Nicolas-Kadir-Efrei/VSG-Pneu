@@ -99,15 +99,15 @@ export default function ServicesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-16">
+      <section className="bg-gradient-to-br from-red-500 to-red-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Nos Services Pneus
             </h1>
-            <p className="text-xl text-orange-100 mb-8">
+            <p className="text-xl text-red-100 mb-8">
               Des prestations complètes pour l'entretien et la réparation de vos pneus, 
               réalisées par des professionnels qualifiés
             </p>
@@ -115,7 +115,7 @@ export default function ServicesPage() {
               <Button size="lg" variant="secondary" asChild>
                 <a href="tel:0143896808">Appeler pour urgence</a>
               </Button>
-              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-orange-500" asChild>
+              <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-red-500" asChild>
                 <Link href="/rendez-vous">Prendre rendez-vous</Link>
               </Button>
             </div>
@@ -124,7 +124,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Main Services */}
-      <section className="py-16">
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {services.map((service, index) => {
@@ -133,8 +133,8 @@ export default function ServicesPage() {
                 <Card key={index} className="hover:shadow-lg transition-shadow">
                   <CardHeader>
                     <div className="flex items-start gap-4">
-                      <div className="bg-orange-100 p-3 rounded-lg">
-                        <Icon className="h-8 w-8 text-orange-500" />
+                      <div className="bg-red-500/10 dark:bg-red-500/20 p-3 rounded-lg">
+                        <Icon className="h-8 w-8 text-red-500" />
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
@@ -142,10 +142,10 @@ export default function ServicesPage() {
                           {service.description}
                         </CardDescription>
                         <div className="flex gap-4 text-sm">
-                          <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full font-medium">
+                          <span className="bg-red-500/10 text-red-600 dark:bg-red-500/20 dark:text-red-400 px-3 py-1 rounded-full font-medium">
                             {service.price}
                           </span>
-                          <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full font-medium flex items-center gap-1">
+                          <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full font-medium flex items-center gap-1">
                             <Clock className="h-4 w-4" />
                             {service.duration}
                           </span>
@@ -154,12 +154,12 @@ export default function ServicesPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 mb-4">{service.details}</p>
+                    <p className="text-muted-foreground mb-4">{service.details}</p>
                     <div className="space-y-2">
-                      <h4 className="font-semibold text-gray-900">Prestations incluses :</h4>
+                      <h4 className="font-semibold text-foreground">Prestations incluses :</h4>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {service.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center gap-2 text-sm text-gray-600">
+                          <div key={featureIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
                             <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                             {feature}
                           </div>
@@ -175,13 +175,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Special Services */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-foreground mb-4">
               Services spécialisés
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Des solutions adaptées à vos besoins spécifiques
             </p>
           </div>
@@ -197,7 +197,7 @@ export default function ServicesPage() {
                 <CardContent>
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="text-sm text-gray-600 flex items-center justify-center gap-2">
+                      <li key={featureIndex} className="text-sm text-muted-foreground flex items-center justify-center gap-2">
                         <CheckCircle className="h-4 w-4 text-green-500" />
                         {feature}
                       </li>
@@ -211,19 +211,19 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
             Besoin d'une intervention ?
           </h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Contactez-nous pour un devis gratuit ou prenez rendez-vous directement en ligne
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" asChild>
               <Link href="/devis">Demander un devis</Link>
             </Button>
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white" asChild>
+            <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-yellow-950" asChild>
               <Link href="/rendez-vous">Prendre rendez-vous</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>

@@ -47,7 +47,7 @@ export default function MentionsLegalesPage() {
               <div className="space-y-2">
                 <p><strong>Hébergeur :</strong> Vercel Inc.</p>
                 <p><strong>Adresse :</strong> 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis</p>
-                <p><strong>Site web :</strong> <a href="https://vercel.com" className="text-orange-500 hover:underline">https://vercel.com</a></p>
+                <p><strong>Site web :</strong> <a href="https://vercel.com" className="text-red-500 hover:underline">https://vercel.com</a></p>
               </div>
             </section>
 
@@ -92,7 +92,7 @@ export default function MentionsLegalesPage() {
               </p>
               <p className="mt-4">
                 Pour plus d'informations sur le traitement de vos données personnelles, 
-                consultez notre <a href="/confidentialite" className="text-orange-500 hover:underline">politique de confidentialité</a>.
+                consultez notre <a href="/confidentialite" className="text-red-500 hover:underline">politique de confidentialité</a>.
               </p>
             </section>
 

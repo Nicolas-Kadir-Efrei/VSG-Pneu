@@ -24,7 +24,7 @@ export default function RendezVousPage() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     // Sauvegarder le rendez-vous dans le localStorage
@@ -48,6 +48,30 @@ export default function RendezVousPage() {
       // Vérifier que les données sont bien dans le localStorage
       const allAppointments = JSON.parse(localStorage.getItem('vsg_appointments') || '[]')
       console.log('Tous les RDV dans localStorage:', allAppointments)
+
+      const mailResponse = await fetch('/api/form-notification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          type: 'rendezvous',
+          data: formData,
+        }),
+      })
+
+      if (!mailResponse.ok) {
+        const payload = await mailResponse.json().catch(() => ({})) as {
+          error?: string
+          details?: string
+          hint?: string
+        }
+        console.error('Envoi mail:', payload)
+        const msg =
+          payload.details ||
+          payload.hint ||
+          payload.error ||
+          "Erreur lors de l'envoi du mail"
+        throw new Error(msg)
+      }
       
       setIsSubmitted(true)
     } catch (error) {
@@ -62,7 +86,7 @@ export default function RendezVousPage() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gray-50 py-16">
+      <div className="min-h-screen bg-black py-16 text-zinc-100">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <Card className="border-green-200 bg-green-50">
@@ -76,10 +100,10 @@ export default function RendezVousPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="text-center">
-                <p className="text-gray-700 mb-6">
+                <p className="text-zinc-300 mb-6">
                   Nous vous rappellerons dans les plus brefs délais pour confirmer votre rendez-vous.
                 </p>
-                <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-2 text-sm text-zinc-400">
                   <p>📞 En cas d'urgence : <strong>01 43 89 68 08</strong></p>
                   <p>⏰ Délai de rappel habituel : sous 2h en journée</p>
                 </div>
@@ -95,26 +119,26 @@ export default function RendezVousPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-black text-zinc-100 [&_[data-slot=card]]:bg-zinc-900 [&_[data-slot=card]]:text-zinc-100 [&_[data-slot=card]]:ring-zinc-700/60 [&_[data-slot=input]]:border-zinc-700 [&_[data-slot=input]]:bg-zinc-950 [&_[data-slot=input]]:text-zinc-100 [&_[data-slot=textarea]]:border-zinc-700 [&_[data-slot=textarea]]:bg-zinc-950 [&_[data-slot=textarea]]:text-zinc-100 [&_[data-slot=select-trigger]]:border-zinc-700 [&_[data-slot=select-trigger]]:bg-zinc-950 [&_[data-slot=select-trigger]]:text-zinc-100">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-orange-500 to-orange-600 text-white py-16">
+      <section className="bg-gradient-to-br from-red-500 to-red-600 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
               Prendre Rendez-vous
             </h1>
-            <p className="text-xl text-orange-100 mb-8">
+            <p className="text-xl text-red-100 mb-8">
               Réservez votre créneau en ligne ou appelez-nous directement pour une intervention rapide
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:0143896808"
-                className="inline-flex items-center justify-center px-6 py-3 bg-white text-orange-500 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+                className="inline-flex items-center justify-center px-6 py-3 bg-black text-white rounded-lg hover:bg-zinc-900 transition-colors font-medium border border-zinc-700"
               >
                 <Phone className="h-5 w-5 mr-2" />
                 01 43 89 68 08
               </a>
-              <div className="flex items-center justify-center gap-2 text-orange-100">
+              <div className="flex items-center justify-center gap-2 text-red-100">
                 <MapPin className="h-5 w-5" />
                 <span>192 Rue de Paris, Villeneuve-Saint-Georges</span>
               </div>
@@ -124,7 +148,7 @@ export default function RendezVousPage() {
       </section>
 
       {/* Form Section */}
-      <section className="py-16">
+      <section className="py-16 bg-zinc-950">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Form */}
@@ -259,7 +283,7 @@ export default function RendezVousPage() {
                       Envoyer la demande
                     </Button>
 
-                    <p className="text-sm text-gray-500 text-center">
+                    <p className="text-sm text-zinc-500 text-center">
                       * Champs obligatoires. Nous vous rappellerons pour confirmer le rendez-vous.
                     </p>
                   </form>
@@ -272,7 +296,7 @@ export default function RendezVousPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Clock className="h-5 w-5 text-orange-500" />
+                    <Clock className="h-5 w-5 text-red-500" />
                     Horaires
                   </CardTitle>
                 </CardHeader>
@@ -288,7 +312,7 @@ export default function RendezVousPage() {
                     </div>
                     <div className="flex justify-between">
                       <span>Dimanche</span>
-                      <span className="text-gray-500">Fermé</span>
+                      <span className="text-zinc-500">Fermé</span>
                     </div>
                   </div>
                 </CardContent>
@@ -297,7 +321,7 @@ export default function RendezVousPage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Phone className="h-5 w-5 text-orange-500" />
+                    <Phone className="h-5 w-5 text-red-500" />
                     Contact direct
                   </CardTitle>
                 </CardHeader>
@@ -309,22 +333,22 @@ export default function RendezVousPage() {
                         01 43 89 68 08
                       </a>
                     </Button>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-zinc-400">
                       Pour les urgences ou questions immédiates
                     </p>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-orange-50 border-orange-200">
+              <Card className="bg-red-50 border-red-200">
                 <CardHeader>
-                  <CardTitle className="text-orange-800">🚨 Urgence ?</CardTitle>
+                  <CardTitle className="text-red-800">🚨 Urgence ?</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-orange-700 mb-3">
+                  <p className="text-sm text-red-700 mb-3">
                     En cas de crevaison ou problème urgent, appelez-nous directement.
                   </p>
-                  <p className="text-sm text-orange-600">
+                  <p className="text-sm text-red-600">
                     Nous faisons notre possible pour vous recevoir dans la journée.
                   </p>
                 </CardContent>

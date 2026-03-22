@@ -133,9 +133,9 @@ export default function ConfidentialitePage() {
                 </div>
               </div>
               
-              <div className="mt-6 p-4 bg-orange-50 border border-orange-200 rounded-lg">
-                <h3 className="font-semibold text-orange-800">Comment exercer vos droits ?</h3>
-                <p className="text-orange-700 mt-2">
+              <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <h3 className="font-semibold text-red-800">Comment exercer vos droits ?</h3>
+                <p className="text-red-700 mt-2">
                   Pour exercer vos droits, contactez-nous par téléphone au 01 43 89 68 08 
                   ou par email à contact@vsg-pneus.fr en précisant votre demande et en joignant 
                   une copie de votre pièce d'identité.
@@ -165,7 +165,7 @@ export default function ConfidentialitePage() {
               </ul>
               <p className="mt-4">
                 Vous pouvez paramétrer votre navigateur pour refuser les cookies ou être alerté de leur dépôt. 
-                Consultez notre <a href="/cookies" className="text-orange-500 hover:underline">politique de cookies</a> pour plus d'informations.
+                Consultez notre <a href="/cookies" className="text-red-500 hover:underline">politique de cookies</a> pour plus d'informations.
               </p>
             </section>
 
@@ -188,7 +188,7 @@ export default function ConfidentialitePage() {
                 3 Place de Fontenoy - TSA 80715<br />
                 75334 PARIS CEDEX 07<br />
                 Téléphone : 01 53 73 22 22<br />
-                <a href="https://www.cnil.fr" className="text-orange-500 hover:underline">www.cnil.fr</a></p>
+                <a href="https://www.cnil.fr" className="text-red-500 hover:underline">www.cnil.fr</a></p>
               </div>
             </section>
 

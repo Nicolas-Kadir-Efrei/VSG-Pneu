@@ -22,7 +22,7 @@ export default function AppointmentsList({ appointments, onStatusChange }: Appoi
   const getStatusBadge = (status: Appointment['status']) => {
     switch (status) {
       case 'pending':
-        return <Badge variant="outline" className="text-orange-600 border-orange-600">En attente</Badge>
+        return <Badge variant="outline" className="text-red-600 border-red-600">En attente</Badge>
       case 'confirmed':
         return <Badge variant="outline" className="text-blue-600 border-blue-600">Confirmé</Badge>
       case 'completed':

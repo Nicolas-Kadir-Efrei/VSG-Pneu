@@ -5,13 +5,13 @@ import { Phone, MapPin, Clock, MessageSquare } from 'lucide-react'
 
 export default function ContactSection() {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl font-bold text-foreground mb-4">
             Contactez-nous
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Besoin d'un renseignement ou d'une intervention ? Nous sommes là pour vous aider.
           </p>
         </div>
@@ -22,7 +22,7 @@ export default function ContactSection() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <Phone className="h-6 w-6 text-orange-500" />
+                  <Phone className="h-6 w-6 text-red-500" />
                   Urgence crevaison
                 </CardTitle>
                 <CardDescription>
@@ -30,7 +30,7 @@ export default function ContactSection() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <Button size="lg" className="w-full bg-red-500 hover:bg-red-600" asChild>
+                <Button size="lg" className="w-full bg-yellow-400 hover:bg-yellow-500 text-yellow-950" asChild>
                   <a href="tel:0143896808">
                     <Phone className="h-5 w-5 mr-2" />
                     Appeler maintenant
@@ -42,7 +42,7 @@ export default function ContactSection() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <MessageSquare className="h-6 w-6 text-orange-500" />
+                  <MessageSquare className="h-6 w-6 text-red-500" />
                   Prendre rendez-vous
                 </CardTitle>
                 <CardDescription>
@@ -59,7 +59,7 @@ export default function ContactSection() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
-                  <MessageSquare className="h-6 w-6 text-orange-500" />
+                  <MessageSquare className="h-6 w-6 text-red-500" />
                   Demander un devis
                 </CardTitle>
                 <CardDescription>
@@ -84,22 +84,22 @@ export default function ContactSection() {
                 {/* Contact Details */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-orange-500" />
+                    <Phone className="h-5 w-5 text-red-500" />
                     <div>
                       <p className="font-medium">Téléphone</p>
-                      <a href="tel:0143896808" className="text-orange-500 hover:underline">
+                      <a href="tel:0143896808" className="text-red-500 hover:underline">
                         01 43 89 68 08
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-orange-500 mt-1" />
+                    <MapPin className="h-5 w-5 text-red-500 mt-1" />
                     <div>
                       <p className="font-medium">Adresse</p>
-                      <p className="text-gray-600">192 Rue de Paris</p>
-                      <p className="text-gray-600">94190 Villeneuve-Saint-Georges</p>
-                      <Button variant="link" className="p-0 h-auto text-orange-500" asChild>
+                      <p className="text-muted-foreground">192 Rue de Paris</p>
+                      <p className="text-muted-foreground">94190 Villeneuve-Saint-Georges</p>
+                      <Button variant="link" className="p-0 h-auto text-red-500" asChild>
                         <a 
                           href="https://maps.google.com/?q=192+Rue+de+Paris,+94190+Villeneuve-Saint-Georges" 
                           target="_blank" 
@@ -112,10 +112,10 @@ export default function ContactSection() {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <Clock className="h-5 w-5 text-orange-500 mt-1" />
+                    <Clock className="h-5 w-5 text-red-500 mt-1" />
                     <div>
                       <p className="font-medium">Horaires</p>
-                      <div className="text-gray-600 space-y-1">
+                      <div className="text-muted-foreground space-y-1">
                         <p>Lundi - Vendredi : 8h00 - 18h00</p>
                         <p>Samedi : 8h00 - 12h00</p>
                         <p>Dimanche : Fermé</p>
@@ -125,8 +125,8 @@ export default function ContactSection() {
                 </div>
 
                 {/* Map Placeholder */}
-                <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
+                <div className="bg-muted rounded-lg h-48 flex items-center justify-center">
+                  <div className="text-center text-muted-foreground">
                     <MapPin className="h-12 w-12 mx-auto mb-2" />
                     <p>Carte interactive</p>
                     <p className="text-sm">192 Rue de Paris, VSG</p>
@@ -138,12 +138,12 @@ export default function ContactSection() {
         </div>
 
         {/* Special Notice */}
-        <div className="mt-12 bg-orange-50 border border-orange-200 rounded-xl p-6">
+        <div className="mt-12 bg-red-50 border border-red-200 rounded-xl p-6">
           <div className="text-center">
-            <h3 className="text-lg font-semibold text-orange-800 mb-2">
+            <h3 className="text-lg font-semibold text-red-800 mb-2">
               🚨 Service d'urgence disponible
             </h3>
-            <p className="text-orange-700">
+            <p className="text-red-700">
               En cas de crevaison ou de problème urgent, appelez-nous directement. 
               Nous intervenons dans la journée selon disponibilité.
             </p>

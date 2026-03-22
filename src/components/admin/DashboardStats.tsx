@@ -26,8 +26,8 @@ export default function DashboardStats({ stats }: DashboardStatsProps) {
       title: "RDV en attente",
       value: stats.pendingAppointments,
       icon: Clock,
-      color: "text-orange-600",
-      bgColor: "bg-orange-100"
+      color: "text-red-600",
+      bgColor: "bg-red-100"
     },
     {
       title: "Devis en attente",
