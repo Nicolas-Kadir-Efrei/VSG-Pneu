@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-red-500" />
-                <span>Lun-Ven: 8h-18h, Sam: 8h-12h</span>
+                <span>Lun-Jeu: 9h-18h • Ven: 9h-12h30/14h-18h • Sam: 9h-18h • Dim: 10h-17h</span>
               </div>
             </div>
           </div>
@@ -49,23 +49,13 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Nos Services</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <Link href="/services/montage" className="hover:text-red-500 transition-colors">
+                <Link href="/services" className="hover:text-red-500 transition-colors">
                   Montage de pneus
                 </Link>
               </li>
               <li>
-                <Link href="/services/reparation" className="hover:text-red-500 transition-colors">
+                <Link href="/services" className="hover:text-red-500 transition-colors">
                   Réparation crevaison
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/equilibrage" className="hover:text-red-500 transition-colors">
-                  Équilibrage
-                </Link>
-              </li>
-              <li>
-                <Link href="/services/permutation" className="hover:text-red-500 transition-colors">
-                  Permutation
                 </Link>
               </li>
             </ul>

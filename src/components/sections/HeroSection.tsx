@@ -47,7 +47,7 @@ export default function HeroSection() {
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="h-5 w-5 text-red-500" />
-                <span className="text-foreground">Lun-Ven: 8h-18h • Sam: 8h-12h</span>
+                <span className="text-foreground">Lun-Jeu: 9h-18h • Ven: 9h-12h30/14h-18h • Sam: 9h-18h • Dim: 10h-17h</span>
               </div>
             </div>
 
@@ -82,7 +82,7 @@ export default function HeroSection() {
                 <div className="text-6xl font-bold mb-2">🚗</div>
                 <h3 className="text-2xl font-bold mb-4">Service Express</h3>
                 <p className="text-red-100 mb-6">
-                  Montage, réparation et équilibrage de pneus
+                  Montage et réparation de pneus (équilibrage inclus)
                 </p>
                 <div className="grid grid-cols-2 gap-4 text-sm">
                   <div className="bg-white/20 rounded-lg p-3">

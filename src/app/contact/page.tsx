@@ -152,31 +152,31 @@ export default function ContactPage() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Lundi</span>
-                    <span>8h00 - 18h00</span>
+                    <span>9h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Mardi</span>
-                    <span>8h00 - 18h00</span>
+                    <span>9h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Mercredi</span>
-                    <span>8h00 - 18h00</span>
+                    <span>9h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Jeudi</span>
-                    <span>8h00 - 18h00</span>
+                    <span>9h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Vendredi</span>
-                    <span>8h00 - 18h00</span>
+                    <span>9h00 - 12h30 / 14h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between items-center border-t pt-2">
                     <span className="font-medium">Samedi</span>
-                    <span>8h00 - 12h00</span>
+                    <span>9h00 - 18h00</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="font-medium">Dimanche</span>
-                    <span className="text-red-500">Fermé</span>
+                    <span>10h00 - 17h00</span>
                   </div>
                 </div>
               </CardContent>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="font-medium">Services :</span>
-                    <p className="text-muted-foreground">Montage, réparation, équilibrage</p>
+                    <p className="text-muted-foreground">Montage et réparation (équilibrage inclus)</p>
                   </div>
                 </div>
               </CardContent>

@@ -9,30 +9,24 @@ export default function PricingPreview() {
       title: "Voiture",
       description: "Véhicules légers",
       services: [
-        { name: "Montage pneu", price: "15€" },
-        { name: "Équilibrage", price: "10€" },
-        { name: "Réparation", price: "20€" },
-        { name: "Permutation (4 roues)", price: "25€" }
+        { name: "Montage pneu (équilibrage inclus)", price: "15€" },
+        { name: "Réparation crevaison", price: "20€" }
       ]
     },
     {
       title: "SUV / 4x4",
       description: "Véhicules tout-terrain",
       services: [
-        { name: "Montage pneu", price: "18€" },
-        { name: "Équilibrage", price: "12€" },
-        { name: "Réparation", price: "25€" },
-        { name: "Permutation (4 roues)", price: "30€" }
+        { name: "Montage pneu (équilibrage inclus)", price: "18€" },
+        { name: "Réparation crevaison", price: "25€" }
       ]
     },
     {
       title: "Utilitaire",
       description: "Camionnettes légères",
       services: [
-        { name: "Montage pneu", price: "22€" },
-        { name: "Équilibrage", price: "15€" },
-        { name: "Réparation", price: "30€" },
-        { name: "Permutation (4 roues)", price: "35€" }
+        { name: "Montage pneu (équilibrage inclus)", price: "20€" },
+        { name: "Réparation crevaison", price: "30€" }
       ]
     }
   ]

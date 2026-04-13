@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Check, Info } from 'lucide-react'
+import { Check } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Tarifs - VSG PNEUS | Prix transparents pour tous services pneus',
-  description: 'Découvrez nos tarifs TTC transparents : montage pneu dès 15€, réparation crevaison dès 20€, équilibrage dès 10€. Devis gratuit.',
+  description:
+    'Découvrez nos tarifs TTC transparents : montage pneu dès 15€ (équilibrage inclus), réparation crevaison dès 20€. Devis gratuit.',
 }
 
 export default function TarifsPage() {
@@ -16,9 +17,7 @@ export default function TarifsPage() {
       description: "Véhicules légers (jusqu'à 16\")",
       services: [
         { name: "Montage pneu", price: "15€", details: "Démontage + montage + équilibrage + valve" },
-        { name: "Équilibrage seul", price: "10€", details: "Équilibrage précis avec poids de qualité" },
-        { name: "Réparation crevaison", price: "20€", details: "Réparation champignon + test étanchéité" },
-        { name: "Permutation (4 roues)", price: "25€", details: "Rotation complète + contrôle pression" },
+        { name: "Réparation crevaison", price: "20€", details: "Réparation + équilibrage inclus" },
         { name: "Valve TPMS", price: "+15€", details: "Valve capteur de pression" },
       ]
     },
@@ -27,9 +26,7 @@ export default function TarifsPage() {
       description: "Véhicules tout-terrain (16\" à 18\")",
       services: [
         { name: "Montage pneu", price: "18€", details: "Démontage + montage + équilibrage + valve" },
-        { name: "Équilibrage seul", price: "12€", details: "Équilibrage précis avec poids de qualité" },
-        { name: "Réparation crevaison", price: "25€", details: "Réparation champignon + test étanchéité" },
-        { name: "Permutation (4 roues)", price: "30€", details: "Rotation complète + contrôle pression" },
+        { name: "Réparation crevaison", price: "25€", details: "Réparation + équilibrage inclus" },
         { name: "Valve TPMS", price: "+15€", details: "Valve capteur de pression" },
       ]
     },
@@ -37,20 +34,11 @@ export default function TarifsPage() {
       category: "Utilitaire",
       description: "Camionnettes légères et utilitaires",
       services: [
-        { name: "Montage pneu", price: "22€", details: "Démontage + montage + équilibrage + valve" },
-        { name: "Équilibrage seul", price: "15€", details: "Équilibrage précis avec poids de qualité" },
-        { name: "Réparation crevaison", price: "30€", details: "Réparation champignon + test étanchéité" },
-        { name: "Permutation (4 roues)", price: "35€", details: "Rotation complète + contrôle pression" },
+        { name: "Montage pneu", price: "20€", details: "Démontage + montage + équilibrage + valve" },
+        { name: "Réparation crevaison", price: "30€", details: "Réparation + équilibrage inclus" },
         { name: "Valve TPMS", price: "+15€", details: "Valve capteur de pression" },
       ]
     }
-  ]
-
-  const supplements = [
-    { name: "Pneus Run-flat", price: "+5€", description: "Supplément pour pneus roulage à plat" },
-    { name: "Jantes alliage", price: "+3€", description: "Supplément pour jantes en alliage" },
-    { name: "Diamètre > 18\"", price: "Sur devis", description: "Tarif personnalisé selon dimensions" },
-    { name: "Pneus hiver/été", price: "Même tarif", description: "Aucun supplément selon saison" },
   ]
 
   const includedServices = [
@@ -113,41 +101,10 @@ export default function TarifsPage() {
         </div>
       </section>
 
-      {/* Supplements and Included Services */}
+      {/* Included Services */}
       <section className="py-16 bg-white dark:bg-zinc-950">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Supplements */}
-            <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-6">
-                Suppléments éventuels
-              </h2>
-              <div className="space-y-4">
-                {supplements.map((supplement, index) => (
-                  <div key={index} className="flex justify-between items-start p-4 bg-gray-50 dark:bg-zinc-900 rounded-lg">
-                    <div>
-                      <h3 className="font-medium text-gray-900 dark:text-zinc-100">{supplement.name}</h3>
-                      <p className="text-sm text-gray-600 dark:text-zinc-400">{supplement.description}</p>
-                    </div>
-                    <span className="font-semibold text-red-500 ml-4">{supplement.price}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <div className="flex items-start gap-2">
-                  <Info className="h-5 w-5 text-blue-500 mt-0.5" />
-                  <div>
-                    <h4 className="font-medium text-blue-900">Information importante</h4>
-                    <p className="text-sm text-blue-700 mt-1">
-                      Tous nos tarifs sont TTC. Un devis détaillé vous sera remis avant toute intervention.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Included Services */}
-            <div>
+          <div className="max-w-3xl mx-auto">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-zinc-100 mb-6">
                 Inclus dans nos prestations
               </h2>
@@ -164,12 +121,10 @@ export default function TarifsPage() {
                 <h3 className="font-semibold text-green-900 mb-3">Garanties</h3>
                 <ul className="space-y-2 text-sm text-green-700">
                   <li>• Réparation crevaison : 6 mois</li>
-                  <li>• Équilibrage : 1 mois</li>
-                  <li>• Montage : Garanti contre défaut de pose</li>
+                  <li>• Montage : Garanti contre défaut de pose (équilibrage inclus)</li>
                   <li>• Satisfaction client : Notre priorité</li>
                 </ul>
               </div>
-            </div>
           </div>
         </div>
       </section>

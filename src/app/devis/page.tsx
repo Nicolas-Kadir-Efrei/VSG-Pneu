@@ -263,8 +263,6 @@ export default function DevisPage() {
                             <SelectItem value="montage-neuf">Montage pneus neufs</SelectItem>
                             <SelectItem value="montage-apporte">Montage pneus que j'apporte</SelectItem>
                             <SelectItem value="reparation">Réparation crevaison</SelectItem>
-                            <SelectItem value="equilibrage">Équilibrage</SelectItem>
-                            <SelectItem value="permutation">Permutation</SelectItem>
                             <SelectItem value="pack-complet">Pack complet (pneus + montage)</SelectItem>
                             <SelectItem value="autre">Autre (préciser dans le message)</SelectItem>
                           </SelectContent>

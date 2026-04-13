@@ -72,7 +72,7 @@ export default function Header() {
             <ThemeToggle />
             <Button
               variant="outline"
-              className="bg-transparent text-white border-white hover:bg-white hover:text-[#313334]"
+              className="bg-white text-[#313334] border-white hover:bg-zinc-100 hover:text-[#313334] dark:bg-black dark:text-white dark:border-black dark:hover:bg-zinc-900"
               asChild
             >
               <Link href="/rendez-vous">Prendre RDV</Link>
@@ -114,7 +114,7 @@ export default function Header() {
                 <ThemeToggle />
                 <Button
                   variant="outline"
-                  className="bg-transparent text-white border-white hover:bg-white hover:text-[#313334]"
+                  className="bg-white text-[#313334] border-white hover:bg-zinc-100 hover:text-[#313334] dark:bg-black dark:text-white dark:border-black dark:hover:bg-zinc-900"
                   asChild
                 >
                   <Link href="/rendez-vous">Prendre RDV</Link>

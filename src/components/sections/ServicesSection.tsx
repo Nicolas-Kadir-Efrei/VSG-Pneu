@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Wrench, RotateCcw, Scale, Zap } from 'lucide-react'
+import { Wrench, Zap } from 'lucide-react'
 
 export default function ServicesSection() {
   const services = [
@@ -10,28 +10,14 @@ export default function ServicesSection() {
       title: "Montage de pneus",
       description: "Montage professionnel de tous types de pneus avec équilibrage inclus",
       price: "À partir de 15€",
-      features: ["Démontage/remontage", "Équilibrage", "Contrôle pression", "Valve neuve"]
+      features: ["Démontage/remontage", "Équilibrage inclus", "Contrôle pression", "Valve neuve"]
     },
     {
       icon: Zap,
       title: "Réparation crevaison",
-      description: "Réparation rapide et durable de vos crevaisons",
+      description: "Réparation rapide et durable de vos crevaisons, avec équilibrage inclus",
       price: "À partir de 20€",
-      features: ["Diagnostic gratuit", "Réparation champignon", "Test étanchéité", "Garantie 6 mois"]
-    },
-    {
-      icon: Scale,
-      title: "Équilibrage",
-      description: "Équilibrage précis pour un confort de conduite optimal",
-      price: "À partir de 10€",
-      features: ["Machine dernière génération", "Poids de qualité", "Contrôle géométrie", "Test routier"]
-    },
-    {
-      icon: RotateCcw,
-      title: "Permutation",
-      description: "Permutation des pneus pour optimiser leur durée de vie",
-      price: "À partir de 25€",
-      features: ["Contrôle usure", "Rotation optimale", "Vérification pression", "Conseils d'entretien"]
+      features: ["Diagnostic gratuit", "Réparation selon les normes", "Équilibrage inclus", "Garantie 6 mois"]
     }
   ]
 

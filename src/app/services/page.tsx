@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Wrench, RotateCcw, Scale, Zap, Clock, CheckCircle } from 'lucide-react'
+import { Wrench, Zap, Clock, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Services - VSG PNEUS | Montage, Réparation, Équilibrage de pneus',
-  description: 'Découvrez tous nos services : montage de pneus, réparation crevaison, équilibrage, permutation. Intervention rapide à Villeneuve-Saint-Georges.',
+  title: 'Services - VSG PNEUS | Montage et réparation de pneus',
+  description:
+    'Découvrez nos services : montage de pneus et réparation crevaison, avec équilibrage inclus. Intervention rapide à Villeneuve-Saint-Georges.',
 }
 
 export default function ServicesPage() {
@@ -21,7 +22,7 @@ export default function ServicesPage() {
         "Démontage de l'ancien pneu",
         "Nettoyage de la jante",
         "Montage du pneu neuf",
-        "Équilibrage précis",
+        "Équilibrage inclus",
         "Contrôle de la pression",
         "Valve neuve si nécessaire"
       ],
@@ -36,44 +37,12 @@ export default function ServicesPage() {
       features: [
         "Diagnostic gratuit",
         "Localisation précise du dommage",
-        "Réparation champignon",
-        "Test d'étanchéité",
+        "Réparation selon les normes de sécurité",
+        "Équilibrage inclus",
         "Contrôle de sécurité",
         "Garantie 6 mois"
       ],
       details: "Réparation possible uniquement sur la bande de roulement, selon les normes européennes. Diagnostic gratuit pour évaluer la faisabilité."
-    },
-    {
-      icon: Scale,
-      title: "Équilibrage",
-      description: "Équilibrage précis pour un confort de conduite optimal et une usure uniforme",
-      price: "À partir de 10€",
-      duration: "15-20 min",
-      features: [
-        "Machine dernière génération",
-        "Poids de qualité",
-        "Contrôle géométrie",
-        "Test de vibrations",
-        "Nettoyage jante",
-        "Conseils d'entretien"
-      ],
-      details: "L'équilibrage élimine les vibrations et assure une usure uniforme de vos pneus. Recommandé à chaque montage."
-    },
-    {
-      icon: RotateCcw,
-      title: "Permutation",
-      description: "Rotation des pneus pour optimiser leur durée de vie et l'usure",
-      price: "À partir de 25€",
-      duration: "20-30 min",
-      features: [
-        "Contrôle de l'usure",
-        "Rotation selon le type de véhicule",
-        "Vérification de la pression",
-        "Contrôle visuel des pneus",
-        "Serrage au couple",
-        "Conseils d'entretien"
-      ],
-      details: "La permutation permet d'égaliser l'usure entre les pneus avant et arrière, prolongeant ainsi leur durée de vie."
     }
   ]
 
@@ -118,7 +87,7 @@ export default function ServicesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent text-white border-white hover:bg-white hover:text-red-500"
+                className="bg-white text-red-600 border-white hover:bg-zinc-100 hover:text-red-700 dark:bg-black dark:text-white dark:border-black dark:hover:bg-zinc-900"
                 asChild
               >
                 <Link href="/rendez-vous">Prendre rendez-vous</Link>
@@ -228,7 +197,11 @@ export default function ServicesPage() {
             <Button size="lg" asChild>
               <Link href="/devis">Demander un devis</Link>
             </Button>
-            <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-yellow-950" asChild>
+            <Button
+              size="lg"
+              className="bg-white text-red-600 hover:bg-zinc-100 hover:text-red-700 dark:bg-black dark:text-white dark:hover:bg-zinc-900"
+              asChild
+            >
               <Link href="/rendez-vous">Prendre rendez-vous</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>

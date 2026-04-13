@@ -208,8 +208,6 @@ export default function RendezVousPage() {
                         <SelectContent>
                           <SelectItem value="montage">Montage de pneus</SelectItem>
                           <SelectItem value="reparation">Réparation crevaison</SelectItem>
-                          <SelectItem value="equilibrage">Équilibrage</SelectItem>
-                          <SelectItem value="permutation">Permutation</SelectItem>
                           <SelectItem value="controle">Contrôle / Diagnostic</SelectItem>
                           <SelectItem value="autre">Autre (préciser dans le message)</SelectItem>
                         </SelectContent>
@@ -245,7 +243,7 @@ export default function RendezVousPage() {
                             <SelectValue placeholder="Choisir un créneau" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="matin">Matin (8h-12h)</SelectItem>
+                            <SelectItem value="matin">Matin (9h-12h30)</SelectItem>
                             <SelectItem value="apres-midi">Après-midi (14h-18h)</SelectItem>
                             <SelectItem value="flexible">Flexible</SelectItem>
                           </SelectContent>
@@ -303,16 +301,20 @@ export default function RendezVousPage() {
                 <CardContent>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span>Lundi - Vendredi</span>
-                      <span className="font-medium">8h00 - 18h00</span>
+                      <span>Lundi - Jeudi</span>
+                      <span className="font-medium">9h00 - 18h00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span>Vendredi</span>
+                      <span className="font-medium">9h00 - 12h30 / 14h00 - 18h00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Samedi</span>
-                      <span className="font-medium">8h00 - 12h00</span>
+                      <span className="font-medium">9h00 - 18h00</span>
                     </div>
                     <div className="flex justify-between">
                       <span>Dimanche</span>
-                      <span className="text-zinc-500">Fermé</span>
+                      <span className="font-medium">10h00 - 17h00</span>
                     </div>
                   </div>
                 </CardContent>

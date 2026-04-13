@@ -61,7 +61,7 @@ export default function AppointmentsList({ appointments, onStatusChange }: Appoi
 
   const getTimeLabel = (time: string) => {
     const times: { [key: string]: string } = {
-      'matin': 'Matin (8h-12h)',
+      'matin': 'Matin (9h-12h30)',
       'apres-midi': 'Après-midi (14h-18h)',
       'flexible': 'Flexible'
     }

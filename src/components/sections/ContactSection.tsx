@@ -116,9 +116,10 @@ export default function ContactSection() {
                     <div>
                       <p className="font-medium">Horaires</p>
                       <div className="text-muted-foreground space-y-1">
-                        <p>Lundi - Vendredi : 8h00 - 18h00</p>
-                        <p>Samedi : 8h00 - 12h00</p>
-                        <p>Dimanche : Fermé</p>
+                        <p>Lundi - Jeudi : 9h00 - 18h00</p>
+                        <p>Vendredi : 9h00 - 12h30 / 14h00 - 18h00</p>
+                        <p>Samedi : 9h00 - 18h00</p>
+                        <p>Dimanche : 10h00 - 17h00</p>
                       </div>
                     </div>
                   </div>
