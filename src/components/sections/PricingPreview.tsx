@@ -10,7 +10,7 @@ export default function PricingPreview() {
       description: "Véhicules légers",
       services: [
         { name: "Montage pneu (équilibrage inclus)", price: "15€" },
-        { name: "Réparation crevaison", price: "20€" }
+        { name: "Réparation crevaison", price: "15€" }
       ]
     },
     {
@@ -18,7 +18,7 @@ export default function PricingPreview() {
       description: "Véhicules tout-terrain",
       services: [
         { name: "Montage pneu (équilibrage inclus)", price: "18€" },
-        { name: "Réparation crevaison", price: "25€" }
+        { name: "Réparation crevaison", price: "15€" }
       ]
     },
     {
@@ -26,7 +26,7 @@ export default function PricingPreview() {
       description: "Camionnettes légères",
       services: [
         { name: "Montage pneu (équilibrage inclus)", price: "20€" },
-        { name: "Réparation crevaison", price: "30€" }
+        { name: "Réparation crevaison", price: "15€" }
       ]
     }
   ]
@@ -77,7 +77,6 @@ export default function PricingPreview() {
                 {[
                   "Contrôle gratuit de l'état des pneus",
                   "Vérification de la pression",
-                  "Nettoyage des jantes",
                   "Conseils d'entretien personnalisés"
                 ].map((item, index) => (
                   <div key={index} className="flex items-center gap-2">
@@ -94,7 +93,6 @@ export default function PricingPreview() {
               <div className="space-y-2 text-muted-foreground">
                 <p>• Valve TPMS : +15€</p>
                 <p>• Pneus Run-flat : +5€</p>
-                <p>• Jantes alliage : +3€</p>
                 <p>• Diamètre &gt; 18&quot; : sur devis</p>
               </div>
             </div>

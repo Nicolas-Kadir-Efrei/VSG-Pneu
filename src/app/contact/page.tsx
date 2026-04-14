@@ -202,7 +202,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <span className="font-medium">Services :</span>
-                    <p className="text-muted-foreground">Montage et réparation (équilibrage inclus)</p>
+                    <p className="text-muted-foreground">Montage et réparation</p>
                   </div>
                 </div>
               </CardContent>

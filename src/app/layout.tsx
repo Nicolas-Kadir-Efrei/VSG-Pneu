@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "VSG PNEUS - Spécialiste pneus à Villeneuve-Saint-Georges",
   description:
-    "VSG PNEUS, votre garage spécialisé dans le montage et la réparation de pneus à Villeneuve-Saint-Georges (équilibrage inclus). Service rapide, tarifs transparents. Note 9,4/10.",
+    "VSG PNEUS, votre garage spécialisé dans le montage et la réparation de pneus à Villeneuve-Saint-Georges. Service rapide, tarifs transparents. Note 9,4/10.",
 };
 
 export default function RootLayout({

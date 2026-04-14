@@ -7,7 +7,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Tarifs - VSG PNEUS | Prix transparents pour tous services pneus',
   description:
-    'Découvrez nos tarifs TTC transparents : montage pneu dès 15€ (équilibrage inclus), réparation crevaison dès 20€. Devis gratuit.',
+    'Découvrez nos tarifs TTC transparents : montage pneu dès 15€ (équilibrage inclus), réparation crevaison dès 15€. Devis gratuit.',
 }
 
 export default function TarifsPage() {
@@ -17,7 +17,7 @@ export default function TarifsPage() {
       description: "Véhicules légers (jusqu'à 16\")",
       services: [
         { name: "Montage pneu", price: "15€", details: "Démontage + montage + équilibrage + valve" },
-        { name: "Réparation crevaison", price: "20€", details: "Réparation + équilibrage inclus" },
+        { name: "Réparation crevaison", price: "15€", details: "Réparation" },
         { name: "Valve TPMS", price: "+15€", details: "Valve capteur de pression" },
       ]
     },
@@ -26,7 +26,7 @@ export default function TarifsPage() {
       description: "Véhicules tout-terrain (16\" à 18\")",
       services: [
         { name: "Montage pneu", price: "18€", details: "Démontage + montage + équilibrage + valve" },
-        { name: "Réparation crevaison", price: "25€", details: "Réparation + équilibrage inclus" },
+        { name: "Réparation crevaison", price: "15€", details: "Réparation" },
         { name: "Valve TPMS", price: "+15€", details: "Valve capteur de pression" },
       ]
     },
@@ -35,7 +35,7 @@ export default function TarifsPage() {
       description: "Camionnettes légères et utilitaires",
       services: [
         { name: "Montage pneu", price: "20€", details: "Démontage + montage + équilibrage + valve" },
-        { name: "Réparation crevaison", price: "30€", details: "Réparation + équilibrage inclus" },
+        { name: "Réparation crevaison", price: "15€", details: "Réparation" },
         { name: "Valve TPMS", price: "+15€", details: "Valve capteur de pression" },
       ]
     }
@@ -44,7 +44,6 @@ export default function TarifsPage() {
   const includedServices = [
     "Contrôle gratuit de l'état des pneus",
     "Vérification et ajustement de la pression",
-    "Nettoyage des jantes",
     "Serrage au couple recommandé",
     "Conseils d'entretien personnalisés",
     "Garantie sur la prestation"
@@ -120,7 +119,6 @@ export default function TarifsPage() {
               <div className="mt-8 p-6 bg-green-50 border border-green-200 rounded-lg">
                 <h3 className="font-semibold text-green-900 mb-3">Garanties</h3>
                 <ul className="space-y-2 text-sm text-green-700">
-                  <li>• Réparation crevaison : 6 mois</li>
                   <li>• Montage : Garanti contre défaut de pose (équilibrage inclus)</li>
                   <li>• Satisfaction client : Notre priorité</li>
                 </ul>

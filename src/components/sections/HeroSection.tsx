@@ -91,7 +91,7 @@ export default function HeroSection() {
                   </div>
                   <div className="bg-white/20 rounded-lg p-3">
                     <div className="font-semibold">Réparation</div>
-                    <div className="text-red-100">À partir de 20€</div>
+                    <div className="text-red-100">À partir de 15€</div>
                   </div>
                 </div>
               </div>

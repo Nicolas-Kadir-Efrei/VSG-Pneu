@@ -7,7 +7,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Services - VSG PNEUS | Montage et réparation de pneus',
   description:
-    'Découvrez nos services : montage de pneus et réparation crevaison, avec équilibrage inclus. Intervention rapide à Villeneuve-Saint-Georges.',
+    'Découvrez nos services : montage de pneus et réparation crevaison. Intervention rapide à Villeneuve-Saint-Georges.',
 }
 
 export default function ServicesPage() {
@@ -20,7 +20,6 @@ export default function ServicesPage() {
       duration: "30-45 min",
       features: [
         "Démontage de l'ancien pneu",
-        "Nettoyage de la jante",
         "Montage du pneu neuf",
         "Équilibrage inclus",
         "Contrôle de la pression",
@@ -32,21 +31,38 @@ export default function ServicesPage() {
       icon: Zap,
       title: "Réparation crevaison",
       description: "Réparation rapide et durable de vos crevaisons selon les normes de sécurité",
-      price: "À partir de 20€",
+      price: "À partir de 15€",
       duration: "20-30 min",
       features: [
         "Diagnostic gratuit",
         "Localisation précise du dommage",
         "Réparation selon les normes de sécurité",
-        "Équilibrage inclus",
         "Contrôle de sécurité",
-        "Garantie 6 mois"
       ],
       details: "Réparation possible uniquement sur la bande de roulement, selon les normes européennes. Diagnostic gratuit pour évaluer la faisabilité."
+    },
+    {
+      icon: Wrench,
+      title: "Entretien moteur",
+      description: "Vidange + huile moteur selon les préconisations",
+      price: "À partir de 99€",
+      duration: "Sur rendez-vous",
+      features: [
+        "Vidange huile moteur",
+        "Remise à niveau",
+        "Contrôle de sécurité"
+      ],
+      details: "Entretien moteur (vidange) avec huile adaptée à votre véhicule. Prix variable selon modèle et type d'huile."
     }
   ]
 
   const specialServices = [
+    {
+      title: "Option — Freins",
+      description: "Entretien et changement de freins (plaquettes, disques) sur demande, sans prix affiché",
+      icon: "🛑",
+      features: ["Sur rendez-vous", "Devis personnalisé", "Selon préconisations constructeur"]
+    },
     {
       title: "Service Express Urgence",
       description: "Intervention rapide pour les situations d'urgence",
@@ -116,13 +132,17 @@ export default function ServicesPage() {
                           {service.description}
                         </CardDescription>
                         <div className="flex gap-4 text-sm">
-                          <span className="bg-red-500/10 text-red-600 dark:bg-red-500/20 dark:text-red-400 px-3 py-1 rounded-full font-medium">
-                            {service.price}
-                          </span>
-                          <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full font-medium flex items-center gap-1">
-                            <Clock className="h-4 w-4" />
-                            {service.duration}
-                          </span>
+                          {service.price && (
+                            <span className="bg-red-500/10 text-red-600 dark:bg-red-500/20 dark:text-red-400 px-3 py-1 rounded-full font-medium">
+                              {service.price}
+                            </span>
+                          )}
+                          {service.duration && (
+                            <span className="bg-muted text-muted-foreground px-3 py-1 rounded-full font-medium flex items-center gap-1">
+                              <Clock className="h-4 w-4" />
+                              {service.duration}
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -160,7 +180,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {specialServices.map((service, index) => (
               <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardHeader>

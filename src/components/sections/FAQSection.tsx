@@ -45,7 +45,7 @@ export default function FAQSection() {
     },
     {
       question: "Garantissez-vous vos interventions ?",
-      answer: "Oui, nos prestations sont garanties : 6 mois pour les réparations de crevaison. Le montage est garanti contre les défauts de pose. L'équilibrage est inclus dans le montage et dans la réparation crevaison."
+      answer: "Oui, nos prestations sont garanties. Le montage est garanti contre les défauts de pose."
     }
   ]
 

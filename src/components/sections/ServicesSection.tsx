@@ -15,9 +15,16 @@ export default function ServicesSection() {
     {
       icon: Zap,
       title: "Réparation crevaison",
-      description: "Réparation rapide et durable de vos crevaisons, avec équilibrage inclus",
-      price: "À partir de 20€",
-      features: ["Diagnostic gratuit", "Réparation selon les normes", "Équilibrage inclus", "Garantie 6 mois"]
+      description: "Réparation rapide et durable de vos crevaisons",
+      price: "À partir de 15€",
+      features: ["Diagnostic gratuit", "Réparation selon les normes", "Contrôle de sécurité"]
+    },
+    {
+      icon: Wrench,
+      title: "Entretien moteur",
+      description: "Vidange huile moteur selon préconisations",
+      price: "À partir de 99€",
+      features: ["Vidange", "Remise à niveau", "Contrôle de sécurité"]
     }
   ]
 
@@ -45,9 +52,11 @@ export default function ServicesSection() {
                     </div>
                     <div>
                       <CardTitle className="text-xl">{service.title}</CardTitle>
-                      <div className="text-lg font-semibold text-red-500">
-                        {service.price}
-                      </div>
+                      {service.price && (
+                        <div className="text-lg font-semibold text-red-500">
+                          {service.price}
+                        </div>
+                      )}
                     </div>
                   </div>
                   <CardDescription className="text-base">
@@ -74,6 +83,9 @@ export default function ServicesSection() {
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
             Services spécialisés
           </h3>
+          <p className="text-center text-sm text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <span className="font-semibold text-foreground">En option :</span> entretien et changement de freins (plaquettes, disques) sur demande — tarif sur devis.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-4xl mb-3">🏃‍♂️</div>
