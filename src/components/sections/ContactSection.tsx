@@ -2,8 +2,12 @@ import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Phone, MapPin, Clock, MessageSquare } from 'lucide-react'
+import Image from 'next/image'
 
 export default function ContactSection() {
+  const googleMapsUrl =
+    'https://www.google.com/maps/place/Vsg+Pneus/@48.738991,2.4464866,514m/data=!3m1!1e3!4m15!1m8!3m7!1s0x47e60adf8a242f91:0x943a82df1af4104!2s94190+Villeneuve-Saint-Georges!3b1!8m2!3d48.7305769!4d2.447488!16zL20vMDQ4czQz!3m5!1s0x47e674d352ec3367:0x659d9a26cd39c1a9!8m2!3d48.7390273!4d2.4470169!16s%2Fg%2F1hc0wtmwl?entry=ttu&g_ep=EgoyMDI2MDQwOC4wIKXMDSoASAFQAw%3D%3D'
+
   return (
     <section className="py-16 bg-muted">
       <div className="container mx-auto px-4">
@@ -101,7 +105,7 @@ export default function ContactSection() {
                       <p className="text-muted-foreground">94190 Villeneuve-Saint-Georges</p>
                       <Button variant="link" className="p-0 h-auto text-red-500" asChild>
                         <a 
-                          href="https://maps.google.com/?q=192+Rue+de+Paris,+94190+Villeneuve-Saint-Georges" 
+                          href={googleMapsUrl}
                           target="_blank" 
                           rel="noopener noreferrer"
                         >
@@ -125,14 +129,42 @@ export default function ContactSection() {
                   </div>
                 </div>
 
-                {/* Map Placeholder */}
-                <div className="bg-muted rounded-lg h-48 flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="h-12 w-12 mx-auto mb-2" />
-                    <p>Carte interactive</p>
-                    <p className="text-sm">192 Rue de Paris, VSG</p>
+                {/* Map preview */}
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block overflow-hidden rounded-lg border border-border"
+                  aria-label="Ouvrir VSG PNEUS sur Google Maps"
+                >
+                  <div className="relative h-48 w-full">
+                    <Image
+                      src="/vsg-pneus-devanture.png"
+                      alt="Devanture du garage VSG PNEUS"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      priority={false}
+                    />
                   </div>
-                </div>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="text-white text-sm font-semibold leading-tight">VSG PNEUS</p>
+                        <p className="text-white/80 text-xs truncate">Voir sur Google Maps</p>
+                      </div>
+                      <span className="shrink-0 rounded-full bg-white/15 px-2.5 py-1 text-[11px] font-semibold text-white ring-1 ring-white/20">
+                        Ouvrir
+                      </span>
+                    </div>
+                  </div>
+                </a>
+
+                <Button size="sm" variant="outline" className="w-full" asChild>
+                  <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer">
+                    Voir sur Google Maps
+                  </a>
+                </Button>
               </CardContent>
             </Card>
           </div>
