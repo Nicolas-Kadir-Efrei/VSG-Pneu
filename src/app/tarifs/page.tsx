@@ -25,14 +25,14 @@ export default function TarifsPage() {
       category: "SUV / 4x4",
       description: "Véhicules tout-terrain (16\" à 18\")",
       services: [
-        { name: "Montage pneu", price: "18€", details: "Démontage + montage + équilibrage + valve" },
+        { name: "Montage pneu", price: "15€", details: "Démontage + montage + équilibrage + valve" },
         { name: "Réparation crevaison", price: "15€", details: "Réparation" },
         { name: "Valve TPMS", price: "+15€", details: "Valve capteur de pression" },
       ]
     },
     {
       category: "Utilitaire",
-      description: "Camionnettes légères et utilitaires",
+      description: "Camionnettes",
       services: [
         { name: "Montage pneu", price: "20€", details: "Démontage + montage + équilibrage + valve" },
         { name: "Réparation crevaison", price: "15€", details: "Réparation" },

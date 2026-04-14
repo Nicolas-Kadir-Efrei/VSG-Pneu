@@ -17,15 +17,15 @@ export default function PricingPreview() {
       title: "SUV / 4x4",
       description: "Véhicules tout-terrain",
       services: [
-        { name: "Montage pneu (équilibrage inclus)", price: "18€" },
+        { name: "Montage pneu (équilibrage inclus)", price: "15€" },
         { name: "Réparation crevaison", price: "15€" }
       ]
     },
     {
       title: "Utilitaire",
-      description: "Camionnettes légères",
+      description: "Camionnettes",
       services: [
-        { name: "Montage pneu (équilibrage inclus)", price: "20€" },
+        { name: "Montage pneu", price: "20€" },
         { name: "Réparation crevaison", price: "15€" }
       ]
     }
