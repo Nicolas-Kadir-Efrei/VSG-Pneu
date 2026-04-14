@@ -204,7 +204,7 @@ export async function POST(request: NextRequest) {
     // Mot de passe d'application Google : souvent affiché avec des espaces — Gmail attend 16 caractères sans espace
     const smtpPass = process.env.SMTP_PASS?.replace(/\s+/g, '').trim()
     const smtpSecure = process.env.SMTP_SECURE === 'true'
-    const to = 'yukalioverwatch@gmail.com'
+    const to = smtpUser
 
     if (!smtpHost || !smtpUser || !smtpPass) {
       return NextResponse.json(
