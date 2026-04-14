@@ -29,8 +29,6 @@ export default function RendezVousPage() {
     
     // Sauvegarder le rendez-vous dans le localStorage
     try {
-      console.log('Données du formulaire avant sauvegarde:', formData)
-      
       const appointment = saveAppointment({
         customerName: formData.nom,
         phone: formData.telephone,
@@ -42,12 +40,6 @@ export default function RendezVousPage() {
         urgency: (formData.urgence as 'normale' | 'rapide' | 'urgente') || 'normale',
         message: formData.message || undefined
       })
-      
-      console.log('Rendez-vous sauvegardé:', appointment)
-      
-      // Vérifier que les données sont bien dans le localStorage
-      const allAppointments = JSON.parse(localStorage.getItem('vsg_appointments') || '[]')
-      console.log('Tous les RDV dans localStorage:', allAppointments)
 
       const mailResponse = await fetch('/api/form-notification', {
         method: 'POST',

@@ -22,20 +22,14 @@ export default function TestStoragePage() {
       message: 'Test message'
     }
 
-    console.log('Test: Sauvegarde d\'un RDV test...')
     const saved = saveAppointment(testData)
-    console.log('Test: RDV sauvegardé:', saved)
     
     loadData()
   }
 
   const loadData = () => {
-    console.log('Test: Chargement des données...')
     const appointmentsData = getAppointments()
     const statsData = getStats()
-    
-    console.log('Test: RDV chargés:', appointmentsData)
-    console.log('Test: Stats calculées:', statsData)
     
     setAppointments(appointmentsData)
     setStats(statsData)
@@ -44,13 +38,12 @@ export default function TestStoragePage() {
   const clearStorage = () => {
     localStorage.removeItem('vsg_appointments')
     localStorage.removeItem('vsg_quotes')
-    console.log('Test: localStorage vidé')
     loadData()
   }
 
   const checkLocalStorage = () => {
     const stored = localStorage.getItem('vsg_appointments')
-    console.log('Test: Contenu brut du localStorage:', stored)
+    alert(stored || 'Aucune donnée')
   }
 
   return (
@@ -112,7 +105,7 @@ export default function TestStoragePage() {
               <ol className="list-decimal list-inside space-y-1 text-sm">
                 <li>Ouvre la console du navigateur (F12)</li>
                 <li>Clique sur "Sauvegarder RDV test" pour créer un RDV</li>
-                <li>Vérifie les logs dans la console</li>
+                <li>Vérifie que le RDV apparaît ci-dessus</li>
                 <li>Va sur /admin pour voir si le RDV apparaît</li>
                 <li>Utilise "Vider localStorage" pour nettoyer</li>
               </ol>

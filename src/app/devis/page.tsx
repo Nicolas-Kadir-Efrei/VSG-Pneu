@@ -54,8 +54,6 @@ export default function DevisPage() {
         urgency: (formData.urgence as 'flexible' | 'semaine' | 'rapide' | 'urgent') || 'flexible',
         message: formData.message || undefined
       })
-      
-      console.log('Devis sauvegardé:', quote)
 
       const mailResponse = await fetch('/api/form-notification', {
         method: 'POST',

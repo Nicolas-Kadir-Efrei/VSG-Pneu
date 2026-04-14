@@ -47,10 +47,8 @@ export const getAppointments = (): Appointment[] => {
   
   try {
     const stored = localStorage.getItem(APPOINTMENTS_KEY)
-    console.log('getAppointments - localStorage brut:', stored)
     if (stored) {
       const parsed = JSON.parse(stored)
-      console.log('getAppointments - données parsées:', parsed)
       return parsed
     }
   } catch (error) {
@@ -58,15 +56,11 @@ export const getAppointments = (): Appointment[] => {
   }
   
   // Dashboard vierge par défaut
-  console.log('getAppointments - retour tableau vide')
   return []
 }
 
 export const saveAppointment = (appointment: Omit<Appointment, 'id' | 'createdAt' | 'status'>): Appointment => {
-  console.log('saveAppointment appelé avec:', appointment)
-  
   const appointments = getAppointments()
-  console.log('Appointments existants:', appointments)
   
   const newAppointment: Appointment = {
     ...appointment,
@@ -74,18 +68,11 @@ export const saveAppointment = (appointment: Omit<Appointment, 'id' | 'createdAt
     status: 'pending',
     createdAt: new Date().toISOString()
   }
-  
-  console.log('Nouveau appointment créé:', newAppointment)
-  
+
   appointments.push(newAppointment)
   
   if (typeof window !== 'undefined') {
     localStorage.setItem(APPOINTMENTS_KEY, JSON.stringify(appointments))
-    console.log('Sauvegardé dans localStorage, total appointments:', appointments.length)
-    
-    // Vérification immédiate
-    const verification = localStorage.getItem(APPOINTMENTS_KEY)
-    console.log('Vérification localStorage après sauvegarde:', verification)
   }
   
   return newAppointment

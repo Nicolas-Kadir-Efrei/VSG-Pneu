@@ -51,15 +51,9 @@ export default function AdminDashboard() {
 
   // Fonction pour charger les données (accessible dans tout le composant)
   const loadData = () => {
-    console.log('Chargement des données dans le dashboard admin...')
-    
     const appointmentsData = getAppointments()
     const quotesData = getQuotes()
     const statsData = getStats()
-    
-    console.log('Données RDV chargées:', appointmentsData)
-    console.log('Données devis chargées:', quotesData)
-    console.log('Statistiques calculées:', statsData)
     
     setAppointments(appointmentsData)
     setQuotes(quotesData)
@@ -78,7 +72,6 @@ export default function AdminDashboard() {
     // Écouter les changements du localStorage
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === 'vsg_appointments' || e.key === 'vsg_quotes') {
-        console.log('Changement détecté dans localStorage:', e.key)
         loadData()
       }
     }
